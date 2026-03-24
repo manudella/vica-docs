@@ -1966,21 +1966,29 @@
 <li>Wait for results table to appear</li>
 <li>Verify the results show:</li>
 <li>Run number badge</li>
-<li>"N candidates ranked" badge</li>
+<li>"N top" badge (number of analyzed candidates)</li>
+<li>"N total" badge (total candidates in the pool, if more than top)</li>
 <li>"N analyzed" badge</li>
 <li>
-<p>Table with Rank, Candidate ID, Fitness score, Report buttons</p>
+<p>Table with Rank, Candidate ID, R (SPEA2), Fitness score, Report buttons</p>
 </li>
 <li>
-<p><strong>Test inline report</strong>: Click <strong>"View Report"</strong> on the top candidate</p>
+<p><strong>Test inline report</strong>: Click <strong>"Report"</strong> on a top candidate</p>
 </li>
 <li>An iframe should expand below the row showing the full report</li>
 <li>
-<p>Click "Hide Report" to collapse it</p>
+<p>Click "Hide" to collapse it</p>
 </li>
 <li>
-<p><strong>Test new tab</strong>: Click the <strong>arrow (↗)</strong> button — report opens in a new browser tab</p>
+<p><strong>Test new tab</strong>: Click the <strong>arrow</strong> button — report opens in a new browser tab</p>
 </li>
+<li>
+<p><strong>Test remaining candidates list</strong>: Below the top results table, click <strong>"Show remaining N candidates"</strong></p>
+</li>
+<li>An expandable scrollable list appears with Rank, Candidate ID, R (SPEA2), Fitness, and CV button</li>
+<li>These candidates have no report (only top-K are analyzed)</li>
+<li>Click <strong>"Hide remaining N candidates"</strong> to collapse the list</li>
+<li>The list has a max height of 320px and scrolls vertically</li>
 </ol>
 <h3 id="phase-g-verify-report-content">Phase G: Verify Report Content<a class="headerlink" href="#phase-g-verify-report-content" title="Permanent link">&para;</a></h3>
 <p>In the report (inline or new tab), check:</p>

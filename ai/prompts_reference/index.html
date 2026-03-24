@@ -1778,27 +1778,36 @@
 <p><strong>User message</strong>: JD text (truncated to 16,000 chars).</p>
 <p><strong>Prompt text</strong>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>You extract professional/technical skills from a job description and classify each as
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&quot;required&quot; or &quot;preferred&quot; based on the JD wording. Skills from &#39;Required qualifications&#39;,
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>&#39;Must have&#39;, or core responsibilities are &quot;required&quot;. Skills from &#39;Preferred&#39;, &#39;Nice to have&#39;,
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>&#39;Bonus&#39;, or &#39;Plus&#39; sections are &quot;preferred&quot;. Order by importance (most important first).
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>CRITICAL RULES for skill names:
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>1. DECOMPOSE compound phrases into separate atomic skills.
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>   Example: &quot;Modern JavaScript or TypeScript&quot; → two entries: &quot;JavaScript&quot; and &quot;TypeScript&quot;.
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>   Example: &quot;Automated testing for backend and frontend code&quot; → &quot;Automated Testing&quot;.
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>   Example: &quot;Asynchronous processing or task queues&quot; → &quot;Asynchronous Processing&quot; and &quot;Task Queues&quot;.
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>2. Use SHORT CANONICAL names — the standard industry name for the technology or skill.
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>   Do NOT include adjectives, qualifiers, or workflow descriptions.
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>   Example: &quot;Cloud deployment workflows&quot; → &quot;Cloud&quot;.
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>   Example: &quot;CI/CD pipelines&quot; → &quot;CI/CD&quot;.
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>   Example: &quot;REST API design&quot; → &quot;REST APIs&quot;.
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>   Example: &quot;Container orchestration&quot; → &quot;Kubernetes&quot;.
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>   Example: &quot;NoSQL databases&quot; → &quot;NoSQL&quot;.
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>   Example: &quot;Relational databases&quot; → &quot;SQL&quot;.
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>3. If a JD phrase maps to a well-known technology, use that name:
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>   &quot;AWS services&quot; → &quot;AWS&quot;, &quot;Google Cloud&quot; → &quot;GCP&quot;, &quot;Microsoft Azure&quot; → &quot;Azure&quot;.
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>Return ONLY a JSON object: {&quot;skills&quot;: [{&quot;name&quot;: &quot;...&quot;, &quot;required&quot;: true/false}, ...]}.
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>No explanation, only valid JSON.
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&quot;required&quot; or &quot;preferred&quot; based on the JD wording.
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>CLASSIFICATION RULES:
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>- &quot;required&quot;: true — Skills from sections like &#39;Required qualifications&#39;, &#39;Core requirements&#39;,
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  &#39;Must have&#39;, &#39;Requirements&#39;, &#39;What you need&#39;, &#39;Minimum qualifications&#39;, or from the main
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  responsibilities/duties section.
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>- &quot;required&quot;: false — Skills from sections like &#39;Preferred&#39;, &#39;Strongly preferred&#39;,
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  &#39;Nice to have&#39;, &#39;Bonus&#39;, &#39;Plus&#39;, &#39;Desirable&#39;, &#39;Good to have&#39;, or &#39;Ideal candidate&#39; sections.
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>- If a JD has NO clear section headers, classify skills that appear essential to the role as
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  required and supplementary skills as preferred.
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Order by importance (most important first).
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>CRITICAL RULES for skill names:
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>1. DECOMPOSE compound phrases into separate atomic skills.
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>   Example: &quot;Modern JavaScript or TypeScript&quot; → two entries: &quot;JavaScript&quot; and &quot;TypeScript&quot;.
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>   Example: &quot;Automated testing for backend and frontend code&quot; → &quot;Automated Testing&quot;.
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>   Example: &quot;Asynchronous processing or task queues&quot; → &quot;Asynchronous Processing&quot; and &quot;Task Queues&quot;.
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>2. Use SHORT CANONICAL names — the standard industry name for the technology or skill.
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>   Do NOT include adjectives, qualifiers, or workflow descriptions.
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>   Example: &quot;Cloud deployment workflows&quot; → &quot;Cloud&quot;.
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>   Example: &quot;CI/CD pipelines&quot; → &quot;CI/CD&quot;.
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>   Example: &quot;REST API design&quot; → &quot;REST APIs&quot;.
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>   Example: &quot;Container orchestration&quot; → &quot;Kubernetes&quot;.
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>   Example: &quot;NoSQL databases&quot; → &quot;NoSQL&quot;.
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>   Example: &quot;Relational databases&quot; → &quot;SQL&quot;.
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>3. If a JD phrase maps to a well-known technology, use that name:
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>   &quot;AWS services&quot; → &quot;AWS&quot;, &quot;Google Cloud&quot; → &quot;GCP&quot;, &quot;Microsoft Azure&quot; → &quot;Azure&quot;.
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>Return ONLY a JSON object: {&quot;skills&quot;: [{&quot;name&quot;: &quot;...&quot;, &quot;required&quot;: true/false}, ...]}.
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>No explanation, only valid JSON.
 </span></code></pre></div>
 <p><strong>Expected output</strong>:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span><span class="nt">&quot;skills&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Python&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Docker&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">}]}</span>
