@@ -1805,7 +1805,7 @@
 </blockquote>
 <p>Consulting firms screen thousands of CVs per year for both project staffing and external recruitment. Whether matching internal consultants to client engagements or evaluating external candidates for open positions, the screening process is labor-intensive and time-sensitive. Manual screening costs 24-45 minutes per CV when done thoroughly — reading the document, identifying relevant skills, comparing against job requirements, documenting the assessment, and preparing interview questions. At scale, this represents a significant portion of recruiter capacity that could be directed toward higher-value activities such as candidate engagement, client relationship management, and strategic workforce planning.</p>
 <p>VICA reduces the active recruiter time per CV from 24-45 minutes to 1-3 minutes by automating the read-extract-match-document pipeline. The system processes CVs through local OCR, extracts skills with proficiency levels using a local LLM, matches candidates to job requirements using a multi-objective evolutionary algorithm (SPEA2), and generates citation-backed evidence reports with interview questions. Crucially, every skill assessment is linked to verbatim quotes from the original CV — a level of traceability that manual screening cannot match consistently, especially under time pressure.</p>
-<p>The open-source stack eliminates recurring software license fees entirely. VICA runs on-premise using free and open-source components (FastAPI, React, Ollama, vLLM, Docker, Presidio, spaCy), meaning the primary investment is human work for integration, customization, and ongoing maintenance. This front-loaded cost structure contrasts sharply with cloud AI screening platforms that charge <span class="arithmatex">\(150,000-\)</span>400,000 per year in recurring license fees. Over a 5-year horizon, VICA delivers 47-83% lower total cost of ownership while keeping all candidate data on-premise — a material advantage for GDPR compliance and EU AI Act readiness.</p>
+<p>The open-source stack eliminates recurring software license fees entirely. VICA runs on-premise using free and open-source components (FastAPI, React, Ollama, vLLM, Docker), meaning the primary investment is human work for integration, customization, and ongoing maintenance. This front-loaded cost structure contrasts sharply with cloud AI screening platforms that charge <span class="arithmatex">\(150,000-\)</span>400,000 per year in recurring license fees. Over a 5-year horizon, VICA delivers 47-83% lower total cost of ownership while keeping all candidate data on-premise — a material advantage for GDPR compliance and EU AI Act readiness.</p>
 <hr />
 <h2 id="2-hardware-requirements-and-costs">2. Hardware Requirements and Costs<a class="headerlink" href="#2-hardware-requirements-and-costs" title="Permanent link">&para;</a></h2>
 <h3 id="21-production-server-specifications">2.1 Production Server Specifications<a class="headerlink" href="#21-production-server-specifications" title="Permanent link">&para;</a></h3>
@@ -2313,13 +2313,8 @@
 <td>$0</td>
 </tr>
 <tr>
-<td>Presidio (PII anonymization)</td>
-<td>MIT</td>
-<td>$0</td>
-</tr>
-<tr>
-<td>spaCy (NER)</td>
-<td>MIT</td>
+<td>Agenderization (regex-based)</td>
+<td>Built-in</td>
 <td>$0</td>
 </tr>
 <tr>
@@ -2739,8 +2734,8 @@
 </tr>
 <tr>
 <td>Bias reduction</td>
-<td>Systematic de-identification</td>
-<td>PII anonymization removes name, gender, ethnicity cues before processing</td>
+<td>Systematic agenderization</td>
+<td>Gender-neutral language replacement removes gendered cues before AI processing</td>
 </tr>
 <tr>
 <td>Evidence quality</td>
@@ -2779,7 +2774,7 @@
 <td>Discrimination lawsuit</td>
 <td>$100K - $2M</td>
 <td>Medium</td>
-<td>Low (anonymized, documented)</td>
+<td>Low (agenderized, documented)</td>
 <td>$10,000 - $30,000</td>
 </tr>
 <tr>
@@ -2961,7 +2956,7 @@
 <tr>
 <td>Diversity of shortlists</td>
 <td>Maintain or improve vs baseline</td>
-<td>Demographic audit (post-anonymization)</td>
+<td>Demographic audit (post-agenderization)</td>
 <td>Semi-annually</td>
 </tr>
 </tbody>

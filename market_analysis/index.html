@@ -1933,8 +1933,8 @@
 <td></td>
 </tr>
 <tr>
-<td>PII anonymization before processing</td>
-<td>Yes (Presidio + spaCy)</td>
+<td>Gender-neutral language (agenderization)</td>
+<td>Yes (regex-based)</td>
 <td>Rare (some offer redaction post-intake)</td>
 </tr>
 <tr>
@@ -2110,7 +2110,7 @@
 <p>GDPR Art. 22 imposes restrictions on <strong>automated decision-making</strong> that produces legal or similarly significant effects. If an AI system automatically rejects candidates without meaningful human review, candidates have the right to obtain human intervention, express their point of view, and contest the decision. Many cloud platforms offer automated rejection workflows that may not satisfy this requirement.</p>
 <p>Art. 35 requires a <strong>Data Protection Impact Assessment (DPIA)</strong> for processing that involves systematic and extensive profiling of natural persons with decisions that produce legal effects — a description that precisely matches AI-powered candidate screening.</p>
 <p>Data breach notification obligations under Art. 33–34 impose a <strong>72-hour notification window</strong> that applies to every processor and sub-processor in the chain, creating coordination complexity that scales with the number of third parties involved.</p>
-<p><strong>VICA's position</strong> on GDPR is structural, not contractual. Candidate data never leaves the organization's perimeter. There is no Art. 28 processor agreement needed because there is no processor. There is no sub-processor chain because there are no sub-processors. There are no cross-border transfer mechanisms required because data does not cross borders. PII anonymization via Presidio and spaCy occurs before any AI processing, further reducing risk. The organization retains complete control as the sole data controller operating on its own infrastructure.</p>
+<p><strong>VICA's position</strong> on GDPR is structural, not contractual. Candidate data never leaves the organization's perimeter. There is no Art. 28 processor agreement needed because there is no processor. There is no sub-processor chain because there are no sub-processors. There are no cross-border transfer mechanisms required because data does not cross borders. Agenderization (gender-neutral language replacement) occurs before any AI processing, reducing gender bias risk. The organization retains complete control as the sole data controller operating on its own infrastructure.</p>
 <h3 id="52-eu-ai-act-employment-ai-as-high-risk">5.2 EU AI Act — Employment AI as "High-Risk"<a class="headerlink" href="#52-eu-ai-act-employment-ai-as-high-risk" title="Permanent link">&para;</a></h3>
 <p>The EU AI Act (Regulation 2024/1689) entered into force in <strong>August 2024</strong>, establishing the world's first comprehensive legal framework for artificial intelligence. Employment AI is <strong>explicitly listed as high-risk</strong> under Annex III, point 4(a):</p>
 <blockquote>
@@ -2405,7 +2405,7 @@
 <li><strong>Open-source</strong> — fully auditable by regulators, customers, and the community; zero vendor lock-in; customizable to organizational needs</li>
 <li><strong>Built-in validation framework</strong> — precision, recall, F1, and Accuracy@K metrics computed natively; no competitor offers this as a standard feature</li>
 <li><strong>ESCO-compatible taxonomy</strong> with hierarchical skill matching (parent/child relationships) and fuzzy matching (RapidFuzz) for synonym and abbreviation handling</li>
-<li><strong>PII anonymization</strong> — systematic de-identification via Presidio and spaCy before any AI processing, reducing bias risk and minimizing data exposure</li>
+<li><strong>Agenderization</strong> — systematic gender-neutral language replacement before any AI processing, reducing gender bias in skill extraction and matching</li>
 <li><strong>Cost</strong> — zero recurring license fees; one-time hardware investment with sub-14-month payback versus cloud alternatives</li>
 </ul>
 <h3 id="weaknesses">Weaknesses<a class="headerlink" href="#weaknesses" title="Permanent link">&para;</a></h3>

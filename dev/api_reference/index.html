@@ -2530,7 +2530,7 @@
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
 </span></code></pre></div></p>
 <h3 id="post-candidatescandidate_idpreprocess"><code>POST /candidates/{candidate_id}/preprocess</code><a class="headerlink" href="#post-candidatescandidate_idpreprocess" title="Permanent link">&para;</a></h3>
-<p>Parse CV, anonymize PII, section text. Auto-switches GPU to OCR for PDF/image files.</p>
+<p>Parse CV, agenderize text, section it. Auto-switches GPU to OCR for PDF/image files.</p>
 <p><strong>Response</strong>: <code>{"status": "ok", "anonymized_length": 2450}</code></p>
 <h3 id="post-candidatescandidate_idextract-skills"><code>POST /candidates/{candidate_id}/extract-skills</code><a class="headerlink" href="#post-candidatescandidate_idextract-skills" title="Permanent link">&para;</a></h3>
 <p>Build binary skill vector with evidence. Auto-switches GPU to LLM. Requires preprocess first.</p>

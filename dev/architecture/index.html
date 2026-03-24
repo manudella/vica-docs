@@ -774,8 +774,8 @@
 <td>RapidFuzz</td>
 </tr>
 <tr>
-<td><strong>PII removal</strong></td>
-<td>Presidio + spaCy</td>
+<td><strong>Agenderization</strong></td>
+<td>Regex-based gender-neutral language replacement</td>
 </tr>
 <tr>
 <td><strong>PDF parsing</strong></td>
@@ -819,8 +819,8 @@
 <tr>
 <td><strong>Anonymize</strong></td>
 <td><code>anonymize.py</code></td>
-<td>Remove PII (names, emails, phones) + section CV</td>
-<td>Presidio, regex</td>
+<td>Agenderize (gender-neutral language) + section CV</td>
+<td>Regex</td>
 </tr>
 <tr>
 <td><strong>Skill Extraction</strong></td>
@@ -867,7 +867,7 @@
 <tr>
 <td><strong>Temporal</strong></td>
 <td><code>temporal_extraction.py</code></td>
-<td>Extract years of experience via LLM</td>
+<td>Extract years of experience + education via LLM</td>
 <td><code>llm_client.py</code></td>
 </tr>
 <tr>
@@ -894,7 +894,7 @@
 <h2 id="data-flow-regular-loop">Data Flow: Regular Loop<a class="headerlink" href="#data-flow-regular-loop" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>graph TD
     A["1. Upload CV&lt;br/&gt;POST /candidates/upload"] --&gt;|"Store file, create record"| B["2. Parse CV&lt;br/&gt;POST /candidates/{id}/preprocess"]
-    B --&gt;|"GPU → OCR, extract text, anonymize PII"| C["3. Extract Skills&lt;br/&gt;POST /candidates/{id}/extract-skills"]
+    B --&gt;|"GPU → OCR, extract text, agenderize"| C["3. Extract Skills&lt;br/&gt;POST /candidates/{id}/extract-skills"]
     C --&gt;|"GPU → LLM, deep extraction + taxonomy"| D["4. Create Job&lt;br/&gt;POST /jobs/"]
     D --&gt;|"Store raw JD text"| E["5. Extract JD Skills&lt;br/&gt;GET /jobs/extract-skills"]
     E --&gt;|"GPU → LLM, decompose + normalize"| F["6. Validate Skills&lt;br/&gt;PUT /jobs/{id}/skills"]

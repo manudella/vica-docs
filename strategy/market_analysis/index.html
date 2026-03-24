@@ -1242,8 +1242,8 @@
 <h3 id="gdpr-architecture">GDPR Architecture<a class="headerlink" href="#gdpr-architecture" title="Permanent link">¶</a></h3>
 <pre class="mermaid"><code>graph LR
     subgraph VICA["VICA (On-Premise)"]
-        CV["Candidate CVs"] --&gt; PII["PII Removal&lt;br/&gt;Presidio + spaCy"]
-        PII --&gt; AI["Local AI&lt;br/&gt;Processing"]
+        CV["Candidate CVs"] --&gt; AGD["Agenderization&lt;br/&gt;Regex-based"]
+        AGD --&gt; AI["Local AI&lt;br/&gt;Processing"]
         AI --&gt; DB["Local Storage&lt;br/&gt;JSON + Files"]
     end
 
