@@ -1266,31 +1266,66 @@
 <hr/>
 <h2 id="human-work-estimates">Human Work Estimates<a class="headerlink" href="#human-work-estimates" title="Permanent link">¶</a></h2>
 <h3 id="development-customization">Development &amp; Customization<a class="headerlink" href="#development-customization" title="Permanent link">¶</a></h3>
-<pre class="mermaid"><code>gantt
-    title Implementation Timeline (6-7 months)
-    dateFormat YYYY-MM-DD
-    axisFormat %b
-
-    section Phase 1
-    Discovery &amp; Procurement     :a1, 2026-01-06, 2w
-
-    section Phase 2
-    Foundation &amp; Deployment     :a2, after a1, 4w
-
-    section Phase 3
-    Integration (ATS, SSO, DB) :a3, 2026-02-03, 10w
-
-    section Phase 4
-    Customization              :a4, 2026-03-17, 6w
-
-    section Phase 5
-    Validation                 :a5, 2026-04-14, 6w
-
-    section Phase 6
-    Pilot (5-10 recruiters)    :a6, 2026-05-12, 6w
-
-    section Phase 7
-    Full Rollout               :a7, 2026-06-09, 6w</code></pre>
+<div class="impl-timeline">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Phase</th>
+<th style="text-align: center;">Duration</th>
+<th style="text-align: center;">Period</th>
+<th>Key Deliverables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: center;">2 weeks</td>
+<td style="text-align: center;">Weeks 1–2</td>
+<td>Discovery &amp; Procurement — requirements doc, hardware ordered</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: center;">4 weeks</td>
+<td style="text-align: center;">Weeks 3–6</td>
+<td>Foundation &amp; Deployment — server live, VICA deployed, GPU validated</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: center;">10 weeks</td>
+<td style="text-align: center;">Weeks 5–14</td>
+<td>Integration — ATS connector, SSO/LDAP, ERP link, PostgreSQL migration</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: center;">6 weeks</td>
+<td style="text-align: center;">Weeks 10–16</td>
+<td>Customization — skill taxonomy, RBAC, branded reports</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;">6 weeks</td>
+<td style="text-align: center;">Weeks 14–20</td>
+<td>Validation — historical validation (F1 &gt; 0.65), load testing</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: center;">6 weeks</td>
+<td style="text-align: center;">Weeks 18–24</td>
+<td>Pilot — 5–10 recruiters live, 2–3 real jobs processed</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>7</strong></td>
+<td style="text-align: center;">6 weeks</td>
+<td style="text-align: center;">Weeks 22–28</td>
+<td>Full Rollout — all recruiters trained, monitoring live</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Total timeline: 6–7 months</p>
+<p>Phases overlap. Integration (Phase 3) starts while Foundation is wrapping up. Pilot and Rollout overlap for knowledge transfer.</p>
+</div>
 <table>
 <thead>
 <tr>
