@@ -1,0 +1,1463 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="AI-Powered Recruitment Screening — On-Premise, Explainable, Open Source" name="description"/>
+<link href="../" rel="prev"/>
+<link href="../production_cost_roi/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Market Analysis - VICA Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="deep-purple" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#market-analysis-ai-powered-recruitment-screening">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VICA Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VICA Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m5.86 10.31C16.23 21.22 14.28 22.45 12 23c-2.56-.61-4.7-2.07-6.42-4.37C3.86 16.34 3 13.8 3 11V5l9-4 9 4v6c0 2.39-.64 4.61-1.92 6.67l-2.91-2.91c.52-.79.83-1.76.83-2.76a5 5 0 0 0-5-5 5 5 0 0 0-5 5 5 5 0 0 0 5 5c1 0 1.97-.31 2.76-.83z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VICA Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Market Analysis
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/your-org/vica" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    vica
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../hr/">
+          
+  
+  
+    
+  
+  For Recruiters
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ai/">
+          
+  
+  
+    
+  
+  AI &amp; ML
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../dev/">
+          
+  
+  
+    
+  
+  Developer Guide
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+    
+  
+  Strategy
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VICA Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VICA Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m5.86 10.31C16.23 21.22 14.28 22.45 12 23c-2.56-.61-4.7-2.07-6.42-4.37C3.86 16.34 3 13.8 3 11V5l9-4 9 4v6c0 2.39-.64 4.61-1.92 6.67l-2.91-2.91c.52-.79.83-1.76.83-2.76a5 5 0 0 0-5-5 5 5 0 0 0-5 5 5 5 0 0 0 5 5c1 0 1.97-.31 2.76-.83z"></path></svg>
+</a>
+    VICA Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/your-org/vica" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    vica
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../hr/">
+<span class="md-ellipsis">
+    
+  
+    For Recruiters
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    For Recruiters
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hr/regular_loop_guide/">
+<span class="md-ellipsis">
+    
+  
+    Hiring Guide
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hr/validation_loop_guide/">
+<span class="md-ellipsis">
+    
+  
+    Validation Guide
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hr/understanding_reports/">
+<span class="md-ellipsis">
+    
+  
+    Understanding Reports
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hr/glossary/">
+<span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ai/">
+<span class="md-ellipsis">
+    
+  
+    AI &amp; ML
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    AI &amp; ML
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SPEA2_explanation/">
+<span class="md-ellipsis">
+    
+  
+    SPEA2 Algorithm
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ai/prompts_reference/">
+<span class="md-ellipsis">
+    
+  
+    Prompt Templates
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ai/scoring_rubrics/">
+<span class="md-ellipsis">
+    
+  
+    Scoring Rubrics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ai/skill_normalization/">
+<span class="md-ellipsis">
+    
+  
+    Skill Normalization
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ai/validation_metrics/">
+<span class="md-ellipsis">
+    
+  
+    Validation Metrics
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../dev/">
+<span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Guide
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev/architecture/">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev/api_reference/">
+<span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev/data_model/">
+<span class="md-ellipsis">
+    
+  
+    Data Model
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev/gpu_orchestrator/">
+<span class="md-ellipsis">
+    
+  
+    GPU Orchestration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev/deployment/">
+<span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../testing_guide/">
+<span class="md-ellipsis">
+    
+  
+    Testing Guide
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Strategy
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategy
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Market Analysis
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Market Analysis
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#executive-summary">
+<span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#market-overview">
+<span class="md-ellipsis">
+      
+        Market Overview
+      
+    </span>
+</a>
+<nav aria-label="Market Overview" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#market-size-growth">
+<span class="md-ellipsis">
+      
+        Market Size &amp; Growth
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#market-segmentation">
+<span class="md-ellipsis">
+      
+        Market Segmentation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#growth-drivers">
+<span class="md-ellipsis">
+      
+        Growth Drivers
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#competitive-landscape">
+<span class="md-ellipsis">
+      
+        Competitive Landscape
+      
+    </span>
+</a>
+<nav aria-label="Competitive Landscape" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#annual-cost-comparison">
+<span class="md-ellipsis">
+      
+        Annual Cost Comparison
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#feature-comparison">
+<span class="md-ellipsis">
+      
+        Feature Comparison
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#privacy-regulatory-advantage">
+<span class="md-ellipsis">
+      
+        Privacy &amp; Regulatory Advantage
+      
+    </span>
+</a>
+<nav aria-label="Privacy &amp; Regulatory Advantage" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eu-ai-act-employment-ai-as-high-risk">
+<span class="md-ellipsis">
+      
+        EU AI Act — Employment AI as High-Risk
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gdpr-architecture">
+<span class="md-ellipsis">
+      
+        GDPR Architecture
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#swot-analysis">
+<span class="md-ellipsis">
+      
+        SWOT Analysis
+      
+    </span>
+</a>
+<nav aria-label="SWOT Analysis" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strengths">
+<span class="md-ellipsis">
+      
+        Strengths
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#weaknesses">
+<span class="md-ellipsis">
+      
+        Weaknesses
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#opportunities">
+<span class="md-ellipsis">
+      
+        Opportunities
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#threats">
+<span class="md-ellipsis">
+      
+        Threats
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strategic-positioning">
+<span class="md-ellipsis">
+      
+        Strategic Positioning
+      
+    </span>
+</a>
+<nav aria-label="Strategic Positioning" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#target-segments">
+<span class="md-ellipsis">
+      
+        Target Segments
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-messages-by-stakeholder">
+<span class="md-ellipsis">
+      
+        Key Messages by Stakeholder
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../production_cost_roi/">
+<span class="md-ellipsis">
+    
+  
+    Cost &amp; ROI
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#executive-summary">
+<span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#market-overview">
+<span class="md-ellipsis">
+      
+        Market Overview
+      
+    </span>
+</a>
+<nav aria-label="Market Overview" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#market-size-growth">
+<span class="md-ellipsis">
+      
+        Market Size &amp; Growth
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#market-segmentation">
+<span class="md-ellipsis">
+      
+        Market Segmentation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#growth-drivers">
+<span class="md-ellipsis">
+      
+        Growth Drivers
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#competitive-landscape">
+<span class="md-ellipsis">
+      
+        Competitive Landscape
+      
+    </span>
+</a>
+<nav aria-label="Competitive Landscape" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#annual-cost-comparison">
+<span class="md-ellipsis">
+      
+        Annual Cost Comparison
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#feature-comparison">
+<span class="md-ellipsis">
+      
+        Feature Comparison
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#privacy-regulatory-advantage">
+<span class="md-ellipsis">
+      
+        Privacy &amp; Regulatory Advantage
+      
+    </span>
+</a>
+<nav aria-label="Privacy &amp; Regulatory Advantage" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eu-ai-act-employment-ai-as-high-risk">
+<span class="md-ellipsis">
+      
+        EU AI Act — Employment AI as High-Risk
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gdpr-architecture">
+<span class="md-ellipsis">
+      
+        GDPR Architecture
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#swot-analysis">
+<span class="md-ellipsis">
+      
+        SWOT Analysis
+      
+    </span>
+</a>
+<nav aria-label="SWOT Analysis" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strengths">
+<span class="md-ellipsis">
+      
+        Strengths
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#weaknesses">
+<span class="md-ellipsis">
+      
+        Weaknesses
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#opportunities">
+<span class="md-ellipsis">
+      
+        Opportunities
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#threats">
+<span class="md-ellipsis">
+      
+        Threats
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strategic-positioning">
+<span class="md-ellipsis">
+      
+        Strategic Positioning
+      
+    </span>
+</a>
+<nav aria-label="Strategic Positioning" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#target-segments">
+<span class="md-ellipsis">
+      
+        Target Segments
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-messages-by-stakeholder">
+<span class="md-ellipsis">
+      
+        Key Messages by Stakeholder
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="market-analysis-ai-powered-recruitment-screening">Market Analysis — AI-Powered Recruitment Screening<a class="headerlink" href="#market-analysis-ai-powered-recruitment-screening" title="Permanent link">¶</a></h1>
+<blockquote>
+<p>Executive document for strategic positioning of VICA. All figures in USD. Data as of Q1 2026.</p>
+</blockquote>
+<hr/>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">¶</a></h2>
+<div class="kpi-grid">
+<div class="kpi-card blue">
+<div class="kpi-value">$661M</div>
+<div class="kpi-label">AI Recruitment Market (2023)</div>
+</div>
+<div class="kpi-card purple">
+<div class="kpi-value">$1.12B</div>
+<div class="kpi-label">Projected (2030)</div>
+</div>
+<div class="kpi-card green">
+<div class="kpi-value">7.8%</div>
+<div class="kpi-label">CAGR</div>
+</div>
+<div class="kpi-card orange">
+<div class="kpi-value">€4.5B+</div>
+<div class="kpi-label">Cumulative GDPR Fines</div>
+</div>
+</div>
+<p>The market is dominated by <strong>cloud-only SaaS platforms</strong>. No major vendor offers a fully on-premise, open-source AI screening solution with citation-level explainability. VICA is architecturally positioned to address this regulatory gap.</p>
+<hr/>
+<h2 id="market-overview">Market Overview<a class="headerlink" href="#market-overview" title="Permanent link">¶</a></h2>
+<h3 id="market-size-growth">Market Size &amp; Growth<a class="headerlink" href="#market-size-growth" title="Permanent link">¶</a></h3>
+<div class="bar-chart">
+<div class="bar-row">
+<div class="bar-label">AI in Recruitment</div>
+<div class="bar-track">
+<div class="bar-fill indigo" style="width: 58%">$661M → $1.12B (7.8%)</div>
+</div>
+</div>
+<div class="bar-row">
+<div class="bar-label">Recruitment Software</div>
+<div class="bar-track">
+<div class="bar-fill blue" style="width: 72%">$3.1B → $5.5B (7.5%)</div>
+</div>
+</div>
+<div class="bar-row">
+<div class="bar-label">HR Technology (Total)</div>
+<div class="bar-track">
+<div class="bar-fill purple" style="width: 95%">$37B → $70B (10%)</div>
+</div>
+</div>
+</div>
+<h3 id="market-segmentation">Market Segmentation<a class="headerlink" href="#market-segmentation" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>graph TB
+    subgraph T1["Tier 1 — Enterprise HCM&lt;br/&gt;$300K–$5M/yr"]
+        W["Workday"]
+        SAP["SAP SuccessFactors"]
+        ORA["Oracle HCM"]
+    end
+
+    subgraph T2["Tier 2 — ATS Platforms&lt;br/&gt;$6K–$200K/yr"]
+        IC["iCIMS"]
+        GH["Greenhouse"]
+        LV["Lever"]
+        SM["SmartRecruiters"]
+    end
+
+    subgraph T3["Tier 3 — AI-Native&lt;br/&gt;$10K–$500K/yr"]
+        EF["Eightfold.ai"]
+        HV["HireVue"]
+        BM["Beamery"]
+        PH["Phenom"]
+    end
+
+    subgraph T4["Tier 4 — Open Source / On-Premise&lt;br/&gt;$0 software"]
+        VICA["VICA ✦"]
+        OC["OpenCATS (legacy)"]
+    end
+
+    style T1 fill:#ffebee,stroke:#c62828
+    style T2 fill:#fff3e0,stroke:#ef6c00
+    style T3 fill:#e3f2fd,stroke:#1565c0
+    style T4 fill:#e8f5e9,stroke:#2e7d32</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Tier 4 is virtually unserved</p>
+<p>OpenCATS has no AI capabilities and hasn't had a significant release in years. VICA is the <strong>first entrant</strong> combining on-premise deployment with AI screening.</p>
+</div>
+<h3 id="growth-drivers">Growth Drivers<a class="headerlink" href="#growth-drivers" title="Permanent link">¶</a></h3>
+<ul>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 2h4a2 2 0 0 1 2 2v2h4a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4V4a2 2 0 0 1 2-2m4 4V4h-4v2zm-3.5 11.5 6.59-6.59-1.41-1.41-5.18 5.17-2.09-2.08L7 14z"></path></svg></span> <strong>Skills-based hiring</strong> replacing credential-based — 40% YoY growth in skills-first postings (LinkedIn)</li>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"></path></svg></span> <strong>250 applications per job</strong> — manual screening is economically unsustainable</li>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.984 7.984 0 0 1 2.9 12.8M11 19.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.22.21-1.79L9 15v1a2 2 0 0 0 2 2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> <strong>Remote work</strong> expanding candidate pools globally, compounding volume + data residency complexity</li>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3c-1.27 0-2.4.8-2.82 2H3v2h1.95L2 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3L6.05 7h3.12c.33.85.98 1.5 1.83 1.83V20H2v2h20v-2h-9V8.82c.85-.32 1.5-.97 1.82-1.82h3.13L15 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3l-2.95-7H21V5h-6.17C14.4 3.8 13.27 3 12 3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-6.5 5.25L7 14H4zm13 0L20 14h-3z"></path></svg></span> <strong>DEI mandates</strong> driving demand for auditable, bias-reducing AI</li>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m2.3 20.28 9.6-9.6-1.4-1.42-.72.71a.996.996 0 0 1-1.41 0l-.71-.71a.996.996 0 0 1 0-1.41l5.66-5.66a.996.996 0 0 1 1.41 0l.71.71c.39.39.39 1.02 0 1.41l-.71.69 1.42 1.43a.996.996 0 0 1 1.41 0c.39.39.39 1.03 0 1.42l1.41 1.41.71-.71c.39-.39 1.03-.39 1.42 0l.7.71c.39.39.39 1.03 0 1.42l-5.65 5.65c-.39.39-1.03.39-1.42 0l-.7-.7a.99.99 0 0 1 0-1.42l.7-.71-1.41-1.41-9.61 9.61a.996.996 0 0 1-1.41 0c-.39-.39-.39-1.03 0-1.42M20 19a2 2 0 0 1 2 2v1H12v-1a2 2 0 0 1 2-2z"></path></svg></span> <strong>AI regulation</strong> (EU AI Act, NYC LL144, Colorado AI Act) creating mandatory compliance spend</li>
+</ul>
+<hr/>
+<h2 id="competitive-landscape">Competitive Landscape<a class="headerlink" href="#competitive-landscape" title="Permanent link">¶</a></h2>
+<h3 id="annual-cost-comparison">Annual Cost Comparison<a class="headerlink" href="#annual-cost-comparison" title="Permanent link">¶</a></h3>
+<div class="bar-chart">
+<div class="bar-row">
+<div class="bar-label"><strong>VICA</strong></div>
+<div class="bar-track">
+<div class="bar-fill green" style="width: 2%">$0</div>
+</div>
+</div>
+<div class="bar-row">
+<div class="bar-label">Manatal</div>
+<div class="bar-track">
+<div class="bar-fill gray" style="width: 3%">$2K–$5K</div>
+</div>
+</div>
+<div class="bar-row">
+<div class="bar-label">SeekOut</div>
+<div class="bar-track">
+<div class="bar-fill gray" style="width: 10%">$6K–$50K</div>
+</div>
+</div>
+<div class="bar-row">
+<div class="bar-label">Greenhouse</div>
+<div class="bar-track">
+<div class="bar-fill orange" style="width: 24%">$25K–$120K</div>
+</div>
+</div>
+<div class="bar-row">
+<div class="bar-label">iCIMS</div>
+<div class="bar-track">
+<div class="bar-fill orange" style="width: 30%">$30K–$150K</div>
+</div>
+</div>
+<div class="bar-row">
+<div class="bar-label">HireVue</div>
+<div class="bar-track">
+<div class="bar-fill blue" style="width: 40%">$50K–$200K</div>
+</div>
+</div>
+<div class="bar-row">
+<div class="bar-label">Eightfold.ai</div>
+<div class="bar-track">
+<div class="bar-fill indigo" style="width: 80%">$100K–$400K</div>
+</div>
+</div>
+<div class="bar-row">
+<div class="bar-label">Workday Recruiting</div>
+<div class="bar-track">
+<div class="bar-fill red" style="width: 100%">$100K–$500K</div>
+</div>
+</div>
+</div>
+<h3 id="feature-comparison">Feature Comparison<a class="headerlink" href="#feature-comparison" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th style="text-align: center;">VICA</th>
+<th style="text-align: center;">Cloud Leaders</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CV parsing (PDF, DOCX)</td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+</tr>
+<tr>
+<td>OCR for scanned/image CVs</td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.9 9.2c-.8.9-2.3 1.8-3.9 1.8-1.5 0-2.4-.5-3.2-.9-.8-.3-1.6-.8-2.9-.8-1.2 0-2.3.7-2.9 1.3L5 9.1c.9-.9 2.3-1.9 3.9-1.9 1.5 0 2.4.6 3.2.9s1.6.9 2.9.9c1.2 0 2.3-.8 2.9-1.4zm.1 4.9c-.9.9-2.3 1.9-3.9 1.9-1.5 0-2.4-.5-3.2-.9-.8-.3-1.6-.9-2.9-.9-1.2 0-2.3.8-2.9 1.4l-1-1.6c.9-.9 2.3-1.9 3.9-1.9 1.5 0 2.4.5 3.2.9.8.3 1.6.8 2.9.8 1.2 0 2.3-.8 2.9-1.4z"></path></svg></span> Limited</td>
+</tr>
+<tr>
+<td><strong>On-premise deployment</strong></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+</tr>
+<tr>
+<td><strong>Zero external API calls</strong></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+</tr>
+<tr>
+<td><strong>Open-source / auditable</strong></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+</tr>
+<tr>
+<td>GDPR — no 3<sup>rd</sup>-party transfer</td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+</tr>
+<tr>
+<td>LLM-powered skill extraction</td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.9 9.2c-.8.9-2.3 1.8-3.9 1.8-1.5 0-2.4-.5-3.2-.9-.8-.3-1.6-.8-2.9-.8-1.2 0-2.3.7-2.9 1.3L5 9.1c.9-.9 2.3-1.9 3.9-1.9 1.5 0 2.4.6 3.2.9s1.6.9 2.9.9c1.2 0 2.3-.8 2.9-1.4zm.1 4.9c-.9.9-2.3 1.9-3.9 1.9-1.5 0-2.4-.5-3.2-.9-.8-.3-1.6-.9-2.9-.9-1.2 0-2.3.8-2.9 1.4l-1-1.6c.9-.9 2.3-1.9 3.9-1.9 1.5 0 2.4.5 3.2.9.8.3 1.6.8 2.9.8 1.2 0 2.3-.8 2.9-1.4z"></path></svg></span> Some</td>
+</tr>
+<tr>
+<td><strong>SPEA2 multi-objective ranking</strong></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+</tr>
+<tr>
+<td><strong>Verbatim CV citations</strong></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+</tr>
+<tr>
+<td><strong>4-level proficiency assessment</strong></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+</tr>
+<tr>
+<td><strong>Interview question generation</strong></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+</tr>
+<tr>
+<td><strong>Built-in precision/recall/F1</strong></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+</tr>
+<tr>
+<td>Career site / job portal</td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+</tr>
+<tr>
+<td>Interview scheduling</td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+</tr>
+<tr>
+<td>Job board integrations</td>
+<td style="text-align: center;"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:"/></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:"/></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Complementary, not competitive</p>
+<p>VICA targets the <strong>screening intelligence layer</strong> — the highest-leverage stage. It complements existing ATS platforms (iCIMS, Greenhouse, etc.), not replaces them.</p>
+</div>
+<hr/>
+<h2 id="privacy-regulatory-advantage">Privacy &amp; Regulatory Advantage<a class="headerlink" href="#privacy-regulatory-advantage" title="Permanent link">¶</a></h2>
+<h3 id="eu-ai-act-employment-ai-as-high-risk">EU AI Act — Employment AI as High-Risk<a class="headerlink" href="#eu-ai-act-employment-ai-as-high-risk" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>timeline
+    title EU AI Act Compliance Timeline
+    August 2024 : Regulation enters into force
+    February 2025 : Prohibited AI practices apply
+    August 2025 : New AI systems must comply
+    August 2026 : General-purpose AI obligations
+    August 2027 : Existing high-risk systems must comply</code></pre>
+<p>Employment AI is <strong>explicitly listed as high-risk</strong> (Annex III, 4a). Penalties: up to <strong>€35M or 7% of global turnover</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>EU AI Act Requirement</th>
+<th>VICA's Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transparency (Art. 13)</strong></td>
+<td>Citation-level evidence per skill assessment</td>
+</tr>
+<tr>
+<td><strong>Human oversight (Art. 14)</strong></td>
+<td>Recruiter validation loop (drag-drop skill ordering)</td>
+</tr>
+<tr>
+<td><strong>Risk management (Art. 9)</strong></td>
+<td>Open-source, auditable algorithm</td>
+</tr>
+<tr>
+<td><strong>Accuracy (Art. 15)</strong></td>
+<td>Built-in Precision/Recall/F1 framework</td>
+</tr>
+<tr>
+<td><strong>Technical docs (Art. 11)</strong></td>
+<td>This documentation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gdpr-architecture">GDPR Architecture<a class="headerlink" href="#gdpr-architecture" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>graph LR
+    subgraph VICA["VICA (On-Premise)"]
+        CV["Candidate CVs"] --&gt; PII["PII Removal&lt;br/&gt;Presidio + spaCy"]
+        PII --&gt; AI["Local AI&lt;br/&gt;Processing"]
+        AI --&gt; DB["Local Storage&lt;br/&gt;JSON + Files"]
+    end
+
+    subgraph Cloud["Cloud Platform (Typical)"]
+        CV2["Candidate CVs"] --&gt; V["Vendor Cloud"]
+        V --&gt; SP1["Sub-processor 1"]
+        V --&gt; SP2["Sub-processor 2"]
+        V --&gt; SP3["...15-30 sub-processors"]
+    end
+
+    style VICA fill:#e8f5e9,stroke:#4caf50
+    style Cloud fill:#ffebee,stroke:#f44336</code></pre>
+<table>
+<thead>
+<tr>
+<th>Risk Factor</th>
+<th>VICA</th>
+<th>Cloud Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Art. 28 DPA required</td>
+<td>No (no processor)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Sub-processor chain</td>
+<td>0</td>
+<td>15–30</td>
+</tr>
+<tr>
+<td>Cross-border transfers</td>
+<td>None</td>
+<td>Multiple</td>
+</tr>
+<tr>
+<td>CLOUD Act exposure</td>
+<td>None</td>
+<td>Yes (US vendors)</td>
+</tr>
+<tr>
+<td>Breach notification scope</td>
+<td>Internal only</td>
+<td>Multi-party coordination</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="swot-analysis">SWOT Analysis<a class="headerlink" href="#swot-analysis" title="Permanent link">¶</a></h2>
+<div class="swot-grid">
+<div class="swot-card strengths">
+<h4 id="strengths"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9m-6-8L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5z"></path></svg></span> Strengths<a class="headerlink" href="#strengths" title="Permanent link">¶</a></h4>
+<ul>
+<li>Complete data sovereignty — no third-party processors</li>
+<li>Citation-level explainability (unmatched)</li>
+<li>SPEA2 multi-objective ranking (Pareto-optimal)</li>
+<li>Open-source, fully auditable</li>
+<li>Built-in validation framework</li>
+<li>Zero recurring license fees</li>
+</ul>
+</div>
+<div class="swot-card weaknesses">
+<h4 id="weaknesses"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 13h-2V7h2m0 10h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Weaknesses<a class="headerlink" href="#weaknesses" title="Permanent link">¶</a></h4>
+<ul>
+<li>Requires internal DevOps capability</li>
+<li>JSON file storage (not enterprise-grade)</li>
+<li>No native ATS workflow features</li>
+<li>Limited integrations</li>
+<li>Single-GPU throughput constraint</li>
+<li>No commercial support</li>
+</ul>
+</div>
+<div class="swot-card opportunities">
+<h4 id="opportunities"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"></path></svg></span> Opportunities<a class="headerlink" href="#opportunities" title="Permanent link">¶</a></h4>
+<ul>
+<li>EU AI Act enforcement (2025–2027)</li>
+<li>GDPR enforcement intensifying (€4.5B+ fines)</li>
+<li>Growing on-premise AI demand in regulated industries</li>
+<li>Consulting firms as beachhead market</li>
+<li>ATS integration partnerships</li>
+<li>Model upgrades (70B class) without architecture changes</li>
+</ul>
+</div>
+<div class="swot-card threats">
+<h4 id="threats"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2z"></path></svg></span> Threats<a class="headerlink" href="#threats" title="Permanent link">¶</a></h4>
+<ul>
+<li>Cloud vendors adding hybrid/on-premise options</li>
+<li>Competitors adding explainability features</li>
+<li>Rapid AI model evolution</li>
+<li>"Good enough" cloud solutions for unregulated firms</li>
+<li>Internal IT resistance to self-hosted solutions</li>
+<li>Market consolidation</li>
+</ul>
+</div>
+</div>
+<hr/>
+<h2 id="strategic-positioning">Strategic Positioning<a class="headerlink" href="#strategic-positioning" title="Permanent link">¶</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Market Position</p>
+<p><strong>"The only on-premise AI recruitment screener with citation-level explainability — built for EU AI Act compliance."</strong></p>
+</div>
+<h3 id="target-segments">Target Segments<a class="headerlink" href="#target-segments" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>graph TB
+    subgraph Primary["Primary Target"]
+        C["EU-based consulting firms&lt;br/&gt;500–5,000 employees&lt;br/&gt;50–200 recruiters"]
+    end
+
+    subgraph Secondary["Secondary Target"]
+        R["Regulated industries&lt;br/&gt;Financial services, Government,&lt;br/&gt;Healthcare, Defense"]
+    end
+
+    subgraph Tertiary["Tertiary Target"]
+        P["Privacy-conscious mid-market&lt;br/&gt;Proactive compliance&lt;br/&gt;Any sector"]
+    end
+
+    Primary --&gt; Secondary --&gt; Tertiary
+
+    style Primary fill:#e8f5e9,stroke:#4caf50
+    style Secondary fill:#e3f2fd,stroke:#1565c0
+    style Tertiary fill:#f3e5f5,stroke:#7b1fa2</code></pre>
+<h3 id="key-messages-by-stakeholder">Key Messages by Stakeholder<a class="headerlink" href="#key-messages-by-stakeholder" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">CTO/CIO</label><label for="__tabbed_1_2">CFO</label><label for="__tabbed_1_3">Head of HR</label><label for="__tabbed_1_4">Legal/Compliance</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>Zero data leakage. Full auditability. EU AI Act compliant by architecture, not by policy.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>60–85% cost savings over 5 years. Zero recurring license fees. Break-even under 14 months.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>Recruiters see evidence and reasoning, not black-box scores. Built-in validation metrics prove the system works.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>No sub-processors. No cross-border transfers. Open-source for bias auditing. Compliance is architectural, not contractual.</p>
+</blockquote>
+</div>
+</div>
+</input></input></input></input></div>
+<hr/>
+<p><em>Market data: Verified Market Research, Grand View Research, MarketsandMarkets, Gartner, G2, Capterra, EUR-Lex. Q1 2026.</em></p>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Strategic Analysis" class="md-footer__link md-footer__link--prev" href="../">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Strategic Analysis
+              </div>
+</div>
+</a>
+<a aria-label="Next: Cost &amp; ROI" class="md-footer__link md-footer__link--next" href="../production_cost_roi/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Cost &amp; ROI
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/your-org/vica" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+</body>
+</html>

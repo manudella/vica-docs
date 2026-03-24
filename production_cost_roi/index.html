@@ -1,0 +1,3343 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI-Powered Recruitment Screening — On-Premise, Explainable, Open Source">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>VICA Production Deployment — Cost Estimation and ROI Analysis - VICA Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vica-production-deployment-cost-estimation-and-roi-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="VICA Documentation" class="md-header__button md-logo" aria-label="VICA Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m5.86 10.31C16.23 21.22 14.28 22.45 12 23c-2.56-.61-4.7-2.07-6.42-4.37C3.86 16.34 3 13.8 3 11V5l9-4 9 4v6c0 2.39-.64 4.61-1.92 6.67l-2.91-2.91c.52-.79.83-1.76.83-2.76a5 5 0 0 0-5-5 5 5 0 0 0-5 5 5 5 0 0 0 5 5c1 0 1.97-.31 2.76-.83z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VICA Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VICA Production Deployment — Cost Estimation and ROI Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/your-org/vica" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vica
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../hr/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  For Recruiters
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AI & ML
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../dev/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Developer Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../strategy/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="VICA Documentation" class="md-nav__button md-logo" aria-label="VICA Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m5.86 10.31C16.23 21.22 14.28 22.45 12 23c-2.56-.61-4.7-2.07-6.42-4.37C3.86 16.34 3 13.8 3 11V5l9-4 9 4v6c0 2.39-.64 4.61-1.92 6.67l-2.91-2.91c.52-.79.83-1.76.83-2.76a5 5 0 0 0-5-5 5 5 0 0 0-5 5 5 5 0 0 0 5 5c1 0 1.97-.31 2.76-.83z"/></svg>
+
+    </a>
+    VICA Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/your-org/vica" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vica
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href=".." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../hr/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Recruiters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Recruiters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hr/regular_loop_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hiring Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hr/validation_loop_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hr/understanding_reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hr/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../ai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI & ML
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI & ML
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPEA2_explanation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPEA2 Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/prompts_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/scoring_rubrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scoring Rubrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/skill_normalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Normalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/validation_metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../dev/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/api_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/data_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/gpu_orchestrator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../strategy/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategy
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strategy/market_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Market Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strategy/production_cost_roi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost & ROI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-hardware-requirements-and-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Hardware Requirements and Costs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Hardware Requirements and Costs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-production-server-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Production Server Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Production Server Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-justification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Justification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-hardware-cost-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Hardware Cost Estimates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-model-scaling-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Model Scaling Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-redundancy-and-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Redundancy and Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-human-work-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Human Work Estimates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Human Work Estimates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-development-and-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Development and Customization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-devops-and-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 DevOps and Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-training-and-change-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Training and Change Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-ongoing-maintenance-annual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Ongoing Maintenance (Annual)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-project-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Project Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-software-and-integration-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Software and Integration Costs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Software and Integration Costs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-vica-open-source-stack-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 VICA Open-Source Stack — $0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-recommended-enterprise-add-ons-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Recommended Enterprise Add-ons — $0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-optional-commercial-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Optional Commercial Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-total-cost-of-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Total Cost of Ownership
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Total Cost of Ownership">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-year-1-investment-tier-2-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Year 1 Investment (Tier 2 Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-annual-recurring-costs-years-2-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Annual Recurring Costs (Years 2-5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-five-year-tco-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Five-Year TCO Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-roi-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ROI Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. ROI Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-time-savings-per-cv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Time Savings per CV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-recruiter-hours-saved-per-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Recruiter Hours Saved per Year
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-cost-per-hire-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Cost Per Hire Reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-quality-of-hire-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Quality of Hire Improvement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-compliance-risk-reduction-risk-adjusted-annual-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Compliance Risk Reduction (Risk-Adjusted Annual Value)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-roi-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 ROI Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-key-performance-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Key Performance Indicators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Key Performance Indicators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-operational-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Operational KPIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-quality-kpis-from-vicas-built-in-validation-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Quality KPIs (from VICA's Built-in Validation Framework)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-business-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Business KPIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-financial-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Financial KPIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-break-even-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Break-Even Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Break-Even Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-monthly-cash-flow-model-mid-range-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Monthly Cash Flow Model (Mid-Range Scenario)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-break-even-sensitivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Break-Even Sensitivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-risk-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Risk Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-implementation-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Implementation Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Implementation Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-criteria-for-go-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Criteria for Go-Live
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="vica-production-deployment-cost-estimation-and-roi-analysis">VICA Production Deployment — Cost Estimation and ROI Analysis<a class="headerlink" href="#vica-production-deployment-cost-estimation-and-roi-analysis" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Investment analysis for deploying VICA in a medium-big consulting company. Target environment: 500-5,000 employees, 50-200 recruiters, 5,000-20,000 CVs processed per year. All figures in USD. Estimates as of Q1 2026.</p>
+</blockquote>
+<hr />
+<h2 id="1-executive-summary">1. Executive Summary<a class="headerlink" href="#1-executive-summary" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Investment Overview</strong>
+- <strong>Year 1 total investment</strong>: $115,000 - $265,000 (hardware + development + deployment)
+- <strong>Annual recurring cost (Years 2-5)</strong>: $33,000 - $75,000
+- <strong>5-Year TCO</strong>: $247,000 - $565,000
+- <strong>Comparable cloud solution 5-Year TCO</strong>: $750,000 - <span class="arithmatex">\(2,000,000
+- **ROI**: 150-400% over 5 years
+- **Break-even**: 8-14 months from go-live
+- **Recruiter hours saved**: 12,500 - 75,000 over 5 years
+- **Cost per CV screen**: &lt;\)</span>8 (vs <span class="arithmatex">\(25-\)</span>40 manual)</p>
+</blockquote>
+<p>Consulting firms screen thousands of CVs per year for both project staffing and external recruitment. Whether matching internal consultants to client engagements or evaluating external candidates for open positions, the screening process is labor-intensive and time-sensitive. Manual screening costs 24-45 minutes per CV when done thoroughly — reading the document, identifying relevant skills, comparing against job requirements, documenting the assessment, and preparing interview questions. At scale, this represents a significant portion of recruiter capacity that could be directed toward higher-value activities such as candidate engagement, client relationship management, and strategic workforce planning.</p>
+<p>VICA reduces the active recruiter time per CV from 24-45 minutes to 1-3 minutes by automating the read-extract-match-document pipeline. The system processes CVs through local OCR, extracts skills with proficiency levels using a local LLM, matches candidates to job requirements using a multi-objective evolutionary algorithm (SPEA2), and generates citation-backed evidence reports with interview questions. Crucially, every skill assessment is linked to verbatim quotes from the original CV — a level of traceability that manual screening cannot match consistently, especially under time pressure.</p>
+<p>The open-source stack eliminates recurring software license fees entirely. VICA runs on-premise using free and open-source components (FastAPI, React, Ollama, vLLM, Docker, Presidio, spaCy), meaning the primary investment is human work for integration, customization, and ongoing maintenance. This front-loaded cost structure contrasts sharply with cloud AI screening platforms that charge <span class="arithmatex">\(150,000-\)</span>400,000 per year in recurring license fees. Over a 5-year horizon, VICA delivers 47-83% lower total cost of ownership while keeping all candidate data on-premise — a material advantage for GDPR compliance and EU AI Act readiness.</p>
+<hr />
+<h2 id="2-hardware-requirements-and-costs">2. Hardware Requirements and Costs<a class="headerlink" href="#2-hardware-requirements-and-costs" title="Permanent link">&para;</a></h2>
+<h3 id="21-production-server-specifications">2.1 Production Server Specifications<a class="headerlink" href="#21-production-server-specifications" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Tier 1 (5K CVs/yr)</th>
+<th>Tier 2 (10K CVs/yr)</th>
+<th>Tier 3 (20K CVs/yr)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPU</strong></td>
+<td>1x NVIDIA RTX 4090 (24GB VRAM)</td>
+<td>1x NVIDIA A100 (40GB VRAM)</td>
+<td>2x NVIDIA A100 (80GB) or 1x H100 (80GB)</td>
+</tr>
+<tr>
+<td><strong>CPU</strong></td>
+<td>AMD Ryzen 9 7950X (16C/32T)</td>
+<td>AMD EPYC 7343 (16C/32T)</td>
+<td>AMD EPYC 9354 (32C/64T)</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>64GB DDR5</td>
+<td>128GB DDR5 ECC</td>
+<td>256GB DDR5 ECC</td>
+</tr>
+<tr>
+<td><strong>Storage</strong></td>
+<td>2TB NVMe SSD + 4TB HDD</td>
+<td>4TB NVMe RAID-1 + 8TB HDD</td>
+<td>8TB NVMe RAID-10 + 16TB HDD</td>
+</tr>
+<tr>
+<td><strong>Network</strong></td>
+<td>1 Gbps</td>
+<td>10 Gbps</td>
+<td>10 Gbps redundant</td>
+</tr>
+<tr>
+<td><strong>Form Factor</strong></td>
+<td>Workstation / 4U tower</td>
+<td>4U rackmount</td>
+<td>4U rackmount</td>
+</tr>
+<tr>
+<td><strong>OS</strong></td>
+<td>Ubuntu 22.04 LTS</td>
+<td>Ubuntu 22.04 LTS</td>
+<td>Ubuntu 22.04 LTS</td>
+</tr>
+</tbody>
+</table>
+<h4 id="hardware-justification">Hardware Justification<a class="headerlink" href="#hardware-justification" title="Permanent link">&para;</a></h4>
+<p>VICA's GPU orchestrator automatically switches between the OCR service (Qwen2.5-VL-3B-Instruct on vLLM, ~6GB VRAM) and the LLM service (llama3.1:8b on Ollama, ~8GB VRAM) via Docker API calls. Both models fit comfortably within 24GB VRAM, making the RTX 4090 a cost-effective entry point.</p>
+<p><strong>Tier 1 (RTX 4090)</strong> handles up to approximately 25 CVs/hour with sequential GPU switching. Processing is serialized: OCR runs first (~30s/page), then the GPU switches to the LLM for skill extraction (~30-60s per candidate). This is sufficient for 5,000 CVs/year with batch processing during business hours.</p>
+<p><strong>Tier 2 (A100 40GB)</strong> opens the door to significantly larger models. The llama3.1:70b model (~40GB VRAM) delivers an estimated 30-40% improvement in extraction accuracy over the 8b variant — particularly for nuanced skill identification, ambiguous CV formatting, and multilingual documents. Alternatively, the A100 can run both OCR and LLM models simultaneously (eliminating the GPU switching overhead entirely) if using the smaller models.</p>
+<p><strong>Tier 3 (dual A100 80GB or H100 80GB)</strong> enables running OCR and LLM on separate GPUs simultaneously, effectively doubling throughput. This tier also supports frontier-class models such as Qwen2.5-VL-72B for OCR or DeepSeek-V3 for extraction, pushing quality toward cloud API parity while maintaining full on-premise control.</p>
+<p><strong>Memory</strong>: VICA's in-memory store with JSON file persistence is lightweight. 64GB RAM handles approximately 50,000 candidate records comfortably. 128GB+ allows headroom for growth, OS caching, and concurrent processing buffers.</p>
+<p><strong>Storage</strong>: The average CV PDF is approximately 200KB. Processing 20,000 CVs/year generates roughly 4GB/year of document storage. AI models are cached in Docker volumes — approximately 15GB total for the current model stack (Qwen2.5-VL-3B + llama3.1:8b), scaling to approximately 80GB for 70B-class models. NVMe storage ensures fast model loading on GPU switch events.</p>
+<h3 id="22-hardware-cost-estimates">2.2 Hardware Cost Estimates<a class="headerlink" href="#22-hardware-cost-estimates" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Server</th>
+<th>UPS / Power</th>
+<th>Networking</th>
+<th>Dev/Staging</th>
+<th><strong>Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tier 1</td>
+<td>$5,000 - $8,000</td>
+<td>$500 - $1,000</td>
+<td>$200 - $500</td>
+<td>$0 - $2,000</td>
+<td><strong>$5,700 - $11,500</strong></td>
+</tr>
+<tr>
+<td>Tier 2</td>
+<td>$12,000 - $20,000</td>
+<td>$1,000 - $2,000</td>
+<td>$500 - $1,000</td>
+<td>$1,000 - $3,000</td>
+<td><strong>$14,500 - $26,000</strong></td>
+</tr>
+<tr>
+<td>Tier 3</td>
+<td>$25,000 - $45,000</td>
+<td>$2,000 - $4,000</td>
+<td>$1,000 - $2,000</td>
+<td>$5,000 - $10,000</td>
+<td><strong>$33,000 - $61,000</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-model-scaling-options">2.3 Model Scaling Options<a class="headerlink" href="#23-model-scaling-options" title="Permanent link">&para;</a></h3>
+<p>VICA's architecture (Ollama + vLLM with OpenAI-compatible APIs) supports model swapping with zero code changes — only configuration updates are needed. The following table summarizes the best open-source models available as of Q1 2026:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Use</th>
+<th>VRAM Required</th>
+<th>Quality Improvement vs Current</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>llama3.1:8b (current)</td>
+<td>Skill extraction, analysis</td>
+<td>~8GB</td>
+<td>Baseline</td>
+<td>Runs on RTX 4090</td>
+</tr>
+<tr>
+<td>llama3.1:70b</td>
+<td>Skill extraction, analysis</td>
+<td>~40GB</td>
+<td>+30-40% accuracy (estimated)</td>
+<td>Requires A100 40GB+</td>
+</tr>
+<tr>
+<td>Qwen2.5-VL-3B (current)</td>
+<td>OCR</td>
+<td>~6GB</td>
+<td>Baseline</td>
+<td>Runs on RTX 4090</td>
+</tr>
+<tr>
+<td>Qwen2.5-VL-7B</td>
+<td>OCR</td>
+<td>~14GB</td>
+<td>+15-20% OCR accuracy</td>
+<td>Runs on RTX 4090</td>
+</tr>
+<tr>
+<td>Qwen2.5-VL-72B</td>
+<td>OCR</td>
+<td>~80GB</td>
+<td>+40-50% OCR accuracy</td>
+<td>Requires H100 80GB</td>
+</tr>
+<tr>
+<td>Llama 3.3 70B</td>
+<td>Skill extraction</td>
+<td>~40GB</td>
+<td>+35-45% vs 8b</td>
+<td>Requires A100 40GB+</td>
+</tr>
+<tr>
+<td>DeepSeek-V3</td>
+<td>Skill extraction</td>
+<td>~40-80GB</td>
+<td>Competitive with GPT-4 class</td>
+<td>Requires A100/H100</td>
+</tr>
+<tr>
+<td>Mistral Large</td>
+<td>Skill extraction</td>
+<td>~40GB</td>
+<td>Strong multilingual</td>
+<td>Requires A100 40GB+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-redundancy-and-backup">2.4 Redundancy and Backup<a class="headerlink" href="#24-redundancy-and-backup" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>NAS or secondary server</strong> for nightly backup of the <code>data/</code> directory: $1,000 - $3,000</li>
+<li><strong>Automated backup strategy</strong>: incremental nightly, full weekly</li>
+<li><strong>Optional hot-standby</strong> (Tier 3 only): $15,000 - $30,000 additional</li>
+<li><strong>VICA's portable/CPU-only mode</strong> as emergency fallback (degraded performance, no GPU required)</li>
+</ul>
+<hr />
+<h2 id="3-human-work-estimates">3. Human Work Estimates<a class="headerlink" href="#3-human-work-estimates" title="Permanent link">&para;</a></h2>
+<h3 id="31-development-and-customization">3.1 Development and Customization<a class="headerlink" href="#31-development-and-customization" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Work Package</th>
+<th>Effort (Person-Days)</th>
+<th>Skill Required</th>
+<th>Cost Estimate</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ATS integration (REST API, webhooks)</td>
+<td>15-30</td>
+<td>Senior backend developer</td>
+<td>$12,000 - $30,000</td>
+<td>High</td>
+</tr>
+<tr>
+<td>SSO/LDAP integration (SAML 2.0 / OIDC)</td>
+<td>5-10</td>
+<td>DevOps / Security engineer</td>
+<td>$4,000 - $10,000</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Custom skill taxonomy (consulting-specific)</td>
+<td>10-20</td>
+<td>Domain expert + developer</td>
+<td>$8,000 - $20,000</td>
+<td>High</td>
+</tr>
+<tr>
+<td>ERP integration (SAP, Oracle, internal systems)</td>
+<td>10-25</td>
+<td>Integration specialist</td>
+<td>$8,000 - $25,000</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Email notification system</td>
+<td>5-10</td>
+<td>Backend developer</td>
+<td>$4,000 - $10,000</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>RBAC (role-based access control)</td>
+<td>10-15</td>
+<td>Full-stack developer</td>
+<td>$8,000 - $15,000</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Reporting dashboard enhancements</td>
+<td>5-15</td>
+<td>Frontend developer</td>
+<td>$4,000 - $15,000</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Database migration (JSON → PostgreSQL)</td>
+<td>10-20</td>
+<td>Backend / DB engineer</td>
+<td>$8,000 - $20,000</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Multi-language UI and model support</td>
+<td>5-10</td>
+<td>Backend developer</td>
+<td>$4,000 - $10,000</td>
+<td>Low</td>
+</tr>
+<tr>
+<td><strong>Total Development</strong></td>
+<td><strong>75-155</strong></td>
+<td></td>
+<td><strong>$60,000 - $155,000</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Rate assumption: EUR 700-900 / day (<span class="arithmatex">\(800-\)</span>1,000) for senior developers in Western Europe.</p>
+<h3 id="32-devops-and-infrastructure">3.2 DevOps and Infrastructure<a class="headerlink" href="#32-devops-and-infrastructure" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Work Package</th>
+<th>Effort (Person-Days)</th>
+<th>Cost Estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Server provisioning and OS hardening</td>
+<td>3-5</td>
+<td>$2,400 - $5,000</td>
+</tr>
+<tr>
+<td>Docker environment configuration</td>
+<td>2-3</td>
+<td>$1,600 - $3,000</td>
+</tr>
+<tr>
+<td>GPU driver, CUDA, and NVIDIA Container Toolkit setup</td>
+<td>1-2</td>
+<td>$800 - $2,000</td>
+</tr>
+<tr>
+<td>Monitoring stack (Prometheus + Grafana)</td>
+<td>3-5</td>
+<td>$2,400 - $5,000</td>
+</tr>
+<tr>
+<td>Backup automation and disaster recovery plan</td>
+<td>2-3</td>
+<td>$1,600 - $3,000</td>
+</tr>
+<tr>
+<td>CI/CD pipeline (GitLab CI / GitHub Actions)</td>
+<td>3-5</td>
+<td>$2,400 - $5,000</td>
+</tr>
+<tr>
+<td>Security audit and penetration testing</td>
+<td>3-5</td>
+<td>$2,400 - $5,000</td>
+</tr>
+<tr>
+<td>Load testing and performance optimization</td>
+<td>2-3</td>
+<td>$1,600 - $3,000</td>
+</tr>
+<tr>
+<td><strong>Total DevOps</strong></td>
+<td><strong>19-31</strong></td>
+<td><strong>$15,200 - $31,000</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-training-and-change-management">3.3 Training and Change Management<a class="headerlink" href="#33-training-and-change-management" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Duration</th>
+<th>Audience</th>
+<th>Cost Estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recruiter training (2 sessions x 20 people)</td>
+<td>4 days</td>
+<td>Recruiters</td>
+<td>$3,200 - $4,000</td>
+</tr>
+<tr>
+<td>Admin/IT operations training</td>
+<td>2 days</td>
+<td>IT staff</td>
+<td>$1,600 - $2,000</td>
+</tr>
+<tr>
+<td>User documentation and runbooks</td>
+<td>5 days</td>
+<td>All</td>
+<td>$4,000 - $5,000</td>
+</tr>
+<tr>
+<td>Change management workshops</td>
+<td>4 days</td>
+<td>HR leadership, recruiters</td>
+<td>$3,200 - $4,000</td>
+</tr>
+<tr>
+<td><strong>Total Training</strong></td>
+<td><strong>15 days</strong></td>
+<td></td>
+<td><strong>$12,000 - $15,000</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-ongoing-maintenance-annual">3.4 Ongoing Maintenance (Annual)<a class="headerlink" href="#34-ongoing-maintenance-annual" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>FTE Allocation</th>
+<th>Annual Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DevOps / SysAdmin (GPU, Docker, OS updates, monitoring)</td>
+<td>0.15 - 0.25 FTE</td>
+<td>$12,000 - $25,000</td>
+</tr>
+<tr>
+<td>Backend developer (bug fixes, feature requests, model updates)</td>
+<td>0.10 - 0.20 FTE</td>
+<td>$8,000 - $20,000</td>
+</tr>
+<tr>
+<td>Skill taxonomy curator (quarterly updates, industry-specific skills)</td>
+<td>0.05 - 0.10 FTE</td>
+<td>$4,000 - $10,000</td>
+</tr>
+<tr>
+<td><strong>Total Annual Maintenance</strong></td>
+<td><strong>0.30 - 0.55 FTE</strong></td>
+<td><strong>$24,000 - $55,000</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-project-timeline">3.5 Project Timeline<a class="headerlink" href="#35-project-timeline" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Timeline</th>
+<th>Activities</th>
+<th>Success Criteria</th>
+<th>Dependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Discovery</strong></td>
+<td>Weeks 1-2</td>
+<td>Stakeholder interviews, existing ATS audit, skill taxonomy review, hardware procurement</td>
+<td>Requirements document signed off</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>2. Foundation</strong></td>
+<td>Weeks 3-6</td>
+<td>Server setup, Docker deployment, GPU validation, security hardening, basic smoke tests</td>
+<td>VICA processing test CVs successfully</td>
+<td>Hardware delivered</td>
+</tr>
+<tr>
+<td><strong>3. Integration</strong></td>
+<td>Weeks 5-14</td>
+<td>ATS connector, SSO/LDAP, ERP integration, DB migration to PostgreSQL</td>
+<td>End-to-end flow: ATS → VICA → results returned</td>
+<td>Phase 2 complete</td>
+</tr>
+<tr>
+<td><strong>4. Customization</strong></td>
+<td>Weeks 10-16</td>
+<td>Custom taxonomy (consulting skills), RBAC, branded reports, email notifications</td>
+<td>Taxonomy covers 90%+ of real job postings</td>
+<td>Phase 2 complete</td>
+</tr>
+<tr>
+<td><strong>5. Validation</strong></td>
+<td>Weeks 14-20</td>
+<td>Historical validation with past hires, supervised validation with senior recruiters, load testing</td>
+<td>F1 &gt; 0.65, system handles peak load</td>
+<td>Phase 3+4 complete</td>
+</tr>
+<tr>
+<td><strong>6. Pilot</strong></td>
+<td>Weeks 18-24</td>
+<td>5-10 recruiters, 2-3 live job postings, daily feedback standups</td>
+<td>Recruiter satisfaction &gt; 4.0/5, no critical blockers</td>
+<td>Phase 5 complete</td>
+</tr>
+<tr>
+<td><strong>7. Full Rollout</strong></td>
+<td>Weeks 22-28</td>
+<td>All recruiters trained, production go-live, monitoring dashboards live</td>
+<td>Full adoption, KPIs tracked and reported</td>
+<td>Phase 6 complete</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Phases overlap where independent. Total wall-clock time: approximately 6-7 months.</p>
+<hr />
+<h2 id="4-software-and-integration-costs">4. Software and Integration Costs<a class="headerlink" href="#4-software-and-integration-costs" title="Permanent link">&para;</a></h2>
+<h3 id="41-vica-open-source-stack-0">4.1 VICA Open-Source Stack — $0<a class="headerlink" href="#41-vica-open-source-stack-0" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>License</th>
+<th>Annual Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VICA (FastAPI backend + React frontend)</td>
+<td>MIT</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Ollama (LLM serving)</td>
+<td>MIT</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>vLLM (OCR model serving)</td>
+<td>Apache 2.0</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>llama3.1:8b / llama3.1:70b</td>
+<td>Llama 3.1 Community License</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Qwen2.5-VL-3B-Instruct</td>
+<td>Apache 2.0</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Docker / Docker Compose</td>
+<td>Apache 2.0</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Presidio (PII anonymization)</td>
+<td>MIT</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>spaCy (NER)</td>
+<td>MIT</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>ESCO taxonomy data</td>
+<td>EU Open Data License</td>
+<td>$0</td>
+</tr>
+<tr>
+<td><strong>Total Software</strong></td>
+<td></td>
+<td><strong>$0</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-recommended-enterprise-add-ons-0">4.2 Recommended Enterprise Add-ons — $0<a class="headerlink" href="#42-recommended-enterprise-add-ons-0" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+<th>License</th>
+<th>Annual Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PostgreSQL</td>
+<td>Replace JSON store with enterprise DB</td>
+<td>PostgreSQL License</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Keycloak</td>
+<td>SSO / OIDC / SAML authentication</td>
+<td>Apache 2.0</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Redis</td>
+<td>Caching, session store, job queue backend</td>
+<td>BSD-3</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Celery</td>
+<td>Async task queue (batch CV processing)</td>
+<td>BSD-3</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Prometheus + Grafana</td>
+<td>Monitoring and alerting</td>
+<td>Apache 2.0</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Nginx (already included)</td>
+<td>Reverse proxy, TLS termination</td>
+<td>BSD-2</td>
+<td>$0</td>
+</tr>
+<tr>
+<td><strong>Total Add-ons</strong></td>
+<td></td>
+<td></td>
+<td><strong>$0</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-optional-commercial-components">4.3 Optional Commercial Components<a class="headerlink" href="#43-optional-commercial-components" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+<th>Annual Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVIDIA AI Enterprise support</td>
+<td>Enterprise GPU support and optimization</td>
+<td>$4,500/GPU/year</td>
+</tr>
+<tr>
+<td>Red Hat Enterprise Linux (vs Ubuntu)</td>
+<td>Commercial Linux support</td>
+<td><span class="arithmatex">\(1,000-\)</span>3,000/year</td>
+</tr>
+<tr>
+<td>Commercial SSL certificates</td>
+<td>If not using Let's Encrypt</td>
+<td><span class="arithmatex">\(0-\)</span>300/year</td>
+</tr>
+<tr>
+<td><strong>Total Optional</strong></td>
+<td></td>
+<td><strong>$0 - $7,800/year</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-total-cost-of-ownership">5. Total Cost of Ownership<a class="headerlink" href="#5-total-cost-of-ownership" title="Permanent link">&para;</a></h2>
+<h3 id="51-year-1-investment-tier-2-recommended">5.1 Year 1 Investment (Tier 2 Recommended)<a class="headerlink" href="#51-year-1-investment-tier-2-recommended" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Low Estimate</th>
+<th>Mid Estimate</th>
+<th>High Estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hardware (server + accessories)</td>
+<td>$14,500</td>
+<td>$20,000</td>
+<td>$26,000</td>
+</tr>
+<tr>
+<td>Development / customization</td>
+<td>$60,000</td>
+<td>$107,500</td>
+<td>$155,000</td>
+</tr>
+<tr>
+<td>DevOps / infrastructure</td>
+<td>$15,200</td>
+<td>$23,100</td>
+<td>$31,000</td>
+</tr>
+<tr>
+<td>Training / change management</td>
+<td>$12,000</td>
+<td>$13,500</td>
+<td>$15,000</td>
+</tr>
+<tr>
+<td>Software licenses</td>
+<td>$0</td>
+<td>$0</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Contingency (15%)</td>
+<td>$15,255</td>
+<td>$24,615</td>
+<td>$34,050</td>
+</tr>
+<tr>
+<td><strong>Year 1 Total</strong></td>
+<td><strong>$116,955</strong></td>
+<td><strong>$188,715</strong></td>
+<td><strong>$261,050</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-annual-recurring-costs-years-2-5">5.2 Annual Recurring Costs (Years 2-5)<a class="headerlink" href="#52-annual-recurring-costs-years-2-5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Low Estimate</th>
+<th>Mid Estimate</th>
+<th>High Estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maintenance FTE (0.3-0.55)</td>
+<td>$24,000</td>
+<td>$39,500</td>
+<td>$55,000</td>
+</tr>
+<tr>
+<td>Infrastructure (power, cooling, hosting)</td>
+<td>$2,000</td>
+<td>$3,500</td>
+<td>$5,000</td>
+</tr>
+<tr>
+<td>Hardware refresh reserve (20%/yr depreciation)</td>
+<td>$2,900</td>
+<td>$4,000</td>
+<td>$5,200</td>
+</tr>
+<tr>
+<td>Model updates / taxonomy curation</td>
+<td>$2,000</td>
+<td>$3,500</td>
+<td>$5,000</td>
+</tr>
+<tr>
+<td>Training (new hires, refreshers)</td>
+<td>$2,000</td>
+<td>$3,500</td>
+<td>$5,000</td>
+</tr>
+<tr>
+<td><strong>Annual Recurring</strong></td>
+<td><strong>$32,900</strong></td>
+<td><strong>$54,000</strong></td>
+<td><strong>$75,200</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-five-year-tco-summary">5.3 Five-Year TCO Summary<a class="headerlink" href="#53-five-year-tco-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Year 1</th>
+<th>Years 2-5 (total)</th>
+<th><strong>5-Year TCO</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VICA — Low</strong></td>
+<td>$116,955</td>
+<td>$131,600</td>
+<td><strong>$248,555</strong></td>
+</tr>
+<tr>
+<td><strong>VICA — Mid</strong></td>
+<td>$188,715</td>
+<td>$216,000</td>
+<td><strong>$404,715</strong></td>
+</tr>
+<tr>
+<td><strong>VICA — High</strong></td>
+<td>$261,050</td>
+<td>$300,800</td>
+<td><strong>$561,850</strong></td>
+</tr>
+<tr>
+<td>Cloud — Mid-range AI platform</td>
+<td>$150,000/yr</td>
+<td>$600,000</td>
+<td><strong>$750,000</strong></td>
+</tr>
+<tr>
+<td>Cloud — Enterprise AI suite</td>
+<td>$300,000/yr</td>
+<td>$1,200,000</td>
+<td><strong>$1,500,000</strong></td>
+</tr>
+<tr>
+<td>Cloud — Enterprise + compliance</td>
+<td>$400,000/yr</td>
+<td>$1,600,000</td>
+<td><strong>$2,000,000</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Bottom line</strong>: VICA's 5-year TCO is <strong>47-83% lower</strong> than comparable cloud AI screening platforms. The savings compound annually as cloud licenses recur while VICA's costs are front-loaded.</p>
+</blockquote>
+<hr />
+<h2 id="6-roi-analysis">6. ROI Analysis<a class="headerlink" href="#6-roi-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="61-time-savings-per-cv">6.1 Time Savings per CV<a class="headerlink" href="#61-time-savings-per-cv" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Screening Step</th>
+<th>Manual (per CV)</th>
+<th>VICA (per CV)</th>
+<th>Time Saved</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read and comprehend CV</td>
+<td>8-15 min</td>
+<td>0 (automated OCR + parsing)</td>
+<td>8-15 min</td>
+</tr>
+<tr>
+<td>Identify relevant skills</td>
+<td>5-10 min</td>
+<td>~30 sec (LLM extraction)</td>
+<td>4.5-9.5 min</td>
+</tr>
+<tr>
+<td>Compare skills to JD requirements</td>
+<td>3-5 min</td>
+<td>~2 sec (SPEA2 matching)</td>
+<td>3-5 min</td>
+</tr>
+<tr>
+<td>Document assessment and notes</td>
+<td>3-5 min</td>
+<td>0 (auto-generated report)</td>
+<td>3-5 min</td>
+</tr>
+<tr>
+<td>Prepare interview questions</td>
+<td>5-10 min</td>
+<td>~20 sec (LLM generation)</td>
+<td>4.7-9.7 min</td>
+</tr>
+<tr>
+<td><strong>Total per CV</strong></td>
+<td><strong>24-45 min</strong></td>
+<td><strong>~1-3 min</strong></td>
+<td><strong>22-43 min</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Note: VICA processing times assume sequential single-GPU operation (Tier 1). Tier 2-3 deployments with larger models or parallel processing are faster per CV.</p>
+<h3 id="62-recruiter-hours-saved-per-year">6.2 Recruiter Hours Saved per Year<a class="headerlink" href="#62-recruiter-hours-saved-per-year" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>CVs/Year</th>
+<th>Manual Time/CV</th>
+<th>VICA Time/CV</th>
+<th>Hours Saved/Year</th>
+<th>Value (at $50/hr)</th>
+<th>Value (at $80/hr)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conservative</td>
+<td>5,000</td>
+<td>24 min (0.40 hr)</td>
+<td>3 min (0.05 hr)</td>
+<td>1,750</td>
+<td>$87,500</td>
+<td>$140,000</td>
+</tr>
+<tr>
+<td>Mid-range</td>
+<td>10,000</td>
+<td>30 min (0.50 hr)</td>
+<td>3 min (0.05 hr)</td>
+<td>4,500</td>
+<td>$225,000</td>
+<td>$360,000</td>
+</tr>
+<tr>
+<td>High volume</td>
+<td>20,000</td>
+<td>30 min (0.50 hr)</td>
+<td>3 min (0.05 hr)</td>
+<td>9,000</td>
+<td>$450,000</td>
+<td>$720,000</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Recruiter fully loaded cost in Western European consulting firms: <span class="arithmatex">\(50-\)</span>80/hour. Includes salary, benefits, office, and overhead.</p>
+<h3 id="63-cost-per-hire-reduction">6.3 Cost Per Hire Reduction<a class="headerlink" href="#63-cost-per-hire-reduction" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Before VICA</th>
+<th>After VICA</th>
+<th>Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Average screening cost per CV</td>
+<td>$25 - $40</td>
+<td>$3 - $8</td>
+<td>70-85% reduction</td>
+</tr>
+<tr>
+<td>Cost per hire (screening component)</td>
+<td>$1,500 - $3,000</td>
+<td>$400 - $800</td>
+<td>65-75% reduction</td>
+</tr>
+<tr>
+<td>Time-to-shortlist</td>
+<td>5-10 business days</td>
+<td>1-2 business days</td>
+<td>60-80% faster</td>
+</tr>
+<tr>
+<td>Time-to-fill (VICA contribution)</td>
+<td>35-50 days avg</td>
+<td>25-35 days avg</td>
+<td>10-15 days saved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="64-quality-of-hire-improvement">6.4 Quality of Hire Improvement<a class="headerlink" href="#64-quality-of-hire-improvement" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Expected Impact</th>
+<th>How Measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Screening accuracy vs manual</td>
+<td>+15-25% improvement</td>
+<td>VICA validation framework (precision/recall against historical hires)</td>
+</tr>
+<tr>
+<td>False negative rate (missed good candidates)</td>
+<td>-30-50% reduction</td>
+<td>Recall metric from validation runs</td>
+</tr>
+<tr>
+<td>Inter-rater consistency</td>
+<td>Eliminated (deterministic)</td>
+<td>Same JD + candidates always produces identical ranking</td>
+</tr>
+<tr>
+<td>Bias reduction</td>
+<td>Systematic de-identification</td>
+<td>PII anonymization removes name, gender, ethnicity cues before processing</td>
+</tr>
+<tr>
+<td>Evidence quality</td>
+<td>Citation-backed (vs intuition)</td>
+<td>Every skill assessment linked to verbatim CV quotes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="65-compliance-risk-reduction-risk-adjusted-annual-value">6.5 Compliance Risk Reduction (Risk-Adjusted Annual Value)<a class="headerlink" href="#65-compliance-risk-reduction-risk-adjusted-annual-value" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Risk Category</th>
+<th>Potential Exposure</th>
+<th>Probability (without VICA)</th>
+<th>Probability (with VICA)</th>
+<th>Risk-Adjusted Annual Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GDPR fine (Art. 83: up to 4% revenue or EUR 20M)</td>
+<td>$500K - $20M</td>
+<td>Low-medium (cloud sub-processor breach)</td>
+<td>Near-zero (on-premise)</td>
+<td>$10,000 - $50,000</td>
+</tr>
+<tr>
+<td>EU AI Act penalty (up to EUR 35M or 7% turnover)</td>
+<td>$500K - $35M</td>
+<td>Medium (from 2025/2027)</td>
+<td>Very low (architecture compliant)</td>
+<td>$20,000 - $100,000</td>
+</tr>
+<tr>
+<td>Discrimination lawsuit</td>
+<td>$100K - $2M</td>
+<td>Medium</td>
+<td>Low (anonymized, documented)</td>
+<td>$10,000 - $30,000</td>
+</tr>
+<tr>
+<td>Data breach (candidate PII)</td>
+<td>$200K - $5M</td>
+<td>Medium (cloud attack surface)</td>
+<td>Low (no internet-facing DB)</td>
+<td>$15,000 - $50,000</td>
+</tr>
+<tr>
+<td><strong>Total Risk-Adjusted Value</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>$55,000 - $230,000/year</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="66-roi-calculation">6.6 ROI Calculation<a class="headerlink" href="#66-roi-calculation" title="Permanent link">&para;</a></h3>
+<p><strong>Conservative scenario (5K CVs/year, Tier 1):</strong>
+- 5-Year Benefits: Recruiter time saved ($87,500 x 5 = <span class="arithmatex">\(437,500) + Compliance risk reduction (\)</span>55,000 x 5 = $275,000) = $712,500
+- 5-Year TCO: <span class="arithmatex">\(248,555
+- **5-Year ROI: (\)</span>712,500 - $248,555) / $248,555 = 187%**</p>
+<p><strong>Mid-range scenario (10K CVs/year, Tier 2):</strong>
+- 5-Year Benefits: Recruiter time saved ($225,000 x 5 = <span class="arithmatex">\(1,125,000) + Compliance risk (\)</span>140,000 x 5 = $700,000) = $1,825,000
+- 5-Year TCO: <span class="arithmatex">\(404,715
+- **5-Year ROI: (\)</span>1,825,000 - $404,715) / $404,715 = 351%**</p>
+<p><strong>High-volume scenario (20K CVs/year, Tier 3):</strong>
+- 5-Year Benefits: Recruiter time saved ($450,000 x 5 = <span class="arithmatex">\(2,250,000) + Compliance risk (\)</span>230,000 x 5 = $1,150,000) = $3,400,000
+- 5-Year TCO: <span class="arithmatex">\(561,850
+- **5-Year ROI: (\)</span>3,400,000 - $561,850) / $561,850 = 505%**</p>
+<hr />
+<h2 id="7-key-performance-indicators">7. Key Performance Indicators<a class="headerlink" href="#7-key-performance-indicators" title="Permanent link">&para;</a></h2>
+<h3 id="71-operational-kpis">7.1 Operational KPIs<a class="headerlink" href="#71-operational-kpis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Target</th>
+<th>Measurement Method</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cost per CV screen</td>
+<td>&lt; $8</td>
+<td>Total annual cost / CVs processed</td>
+<td>Monthly</td>
+</tr>
+<tr>
+<td>Time to shortlist</td>
+<td>&lt; 2 business days</td>
+<td>Timestamp: CV upload → SPEA2 results</td>
+<td>Per job posting</td>
+</tr>
+<tr>
+<td>Recruiter throughput</td>
+<td>50-100 CVs reviewed/day (vs 15-25 manual)</td>
+<td>CVs processed per recruiter per day</td>
+<td>Weekly</td>
+</tr>
+<tr>
+<td>System availability</td>
+<td>&gt; 99.5%</td>
+<td>Uptime monitoring (Prometheus)</td>
+<td>Monthly</td>
+</tr>
+<tr>
+<td>GPU utilization</td>
+<td>&gt; 60% during business hours</td>
+<td>nvidia-smi / Prometheus metrics</td>
+<td>Weekly</td>
+</tr>
+<tr>
+<td>Average CV processing time</td>
+<td>&lt; 3 minutes end-to-end</td>
+<td>Application logs</td>
+<td>Weekly</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-quality-kpis-from-vicas-built-in-validation-framework">7.2 Quality KPIs (from VICA's Built-in Validation Framework)<a class="headerlink" href="#72-quality-kpis-from-vicas-built-in-validation-framework" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Target</th>
+<th>Definition</th>
+<th>Measurement Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precision@K</td>
+<td>&gt; 0.70</td>
+<td>Of the top-K candidates VICA selects, what proportion are actually good?</td>
+<td>Historical validation: compare top-K to actual hires/interviews</td>
+</tr>
+<tr>
+<td>Recall@K</td>
+<td>&gt; 0.65</td>
+<td>Of all good candidates, what proportion does VICA include in top-K?</td>
+<td>Historical validation: how many hired candidates appear in top-K</td>
+</tr>
+<tr>
+<td>F1 Score</td>
+<td>&gt; 0.65</td>
+<td>Harmonic mean of precision and recall</td>
+<td>Computed from precision and recall</td>
+</tr>
+<tr>
+<td>Accuracy@K</td>
+<td>&gt; 0.70</td>
+<td>True positives / K</td>
+<td>Validation framework</td>
+</tr>
+<tr>
+<td>Average rank of hired candidates</td>
+<td>&lt; K x 1.5</td>
+<td>Where do actually-hired candidates appear in VICA's ranking?</td>
+<td>Rank analysis from validation stats</td>
+</tr>
+<tr>
+<td>Skill coverage</td>
+<td>&gt; 85%</td>
+<td>% of job skills where at least one candidate matches</td>
+<td>Skill coverage analysis per job posting</td>
+</tr>
+</tbody>
+</table>
+<h3 id="73-business-kpis">7.3 Business KPIs<a class="headerlink" href="#73-business-kpis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Target</th>
+<th>Measurement Method</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cost per hire reduction (screening)</td>
+<td>&gt; 50%</td>
+<td>Before/after comparison (12-month average)</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td>Time-to-fill reduction</td>
+<td>&gt; 20%</td>
+<td>Average days: job open → position filled</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td>Time-to-shortlist reduction</td>
+<td>&gt; 60%</td>
+<td>Average days: CVs received → shortlist ready</td>
+<td>Monthly</td>
+</tr>
+<tr>
+<td>Recruiter satisfaction</td>
+<td>&gt; 4.0 / 5.0</td>
+<td>Anonymous survey</td>
+<td>Quarterly (at 3, 6, 12 months)</td>
+</tr>
+<tr>
+<td>Hiring manager satisfaction</td>
+<td>&gt; 4.0 / 5.0</td>
+<td>Quality of shortlists survey</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td>Offer acceptance rate</td>
+<td>Maintain or improve vs baseline</td>
+<td>Track before/after VICA adoption</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td>Diversity of shortlists</td>
+<td>Maintain or improve vs baseline</td>
+<td>Demographic audit (post-anonymization)</td>
+<td>Semi-annually</td>
+</tr>
+</tbody>
+</table>
+<h3 id="74-financial-kpis">7.4 Financial KPIs<a class="headerlink" href="#74-financial-kpis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Target</th>
+<th>Formula</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monthly burn rate</td>
+<td>Within budget &plusmn;10%</td>
+<td>Actual spend vs planned</td>
+<td>Monthly</td>
+</tr>
+<tr>
+<td>Cumulative ROI</td>
+<td>Positive by month 14</td>
+<td>(Cumulative benefits - cumulative costs) / cumulative costs</td>
+<td>Monthly</td>
+</tr>
+<tr>
+<td>Cost avoidance vs cloud</td>
+<td>&gt; $50K/year</td>
+<td>Cloud license equivalent - VICA annual cost</td>
+<td>Annually</td>
+</tr>
+<tr>
+<td>Recruiter hours redirected to high-value work</td>
+<td>&gt; 1,750 hrs/year</td>
+<td>Hours saved x utilization rate</td>
+<td>Quarterly</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-break-even-analysis">8. Break-Even Analysis<a class="headerlink" href="#8-break-even-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="81-monthly-cash-flow-model-mid-range-scenario">8.1 Monthly Cash Flow Model (Mid-Range Scenario)<a class="headerlink" href="#81-monthly-cash-flow-model-mid-range-scenario" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Cumulative Investment</th>
+<th>Cumulative Savings</th>
+<th>Net Position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-3 (setup phase)</td>
+<td>-$80,000</td>
+<td>$0</td>
+<td>-$80,000</td>
+</tr>
+<tr>
+<td>4-6 (integration + pilot start)</td>
+<td>-$130,000</td>
+<td>$18,750</td>
+<td>-$111,250</td>
+</tr>
+<tr>
+<td>7-9 (pilot + ramp-up)</td>
+<td>-$155,000</td>
+<td>$56,250</td>
+<td>-$98,750</td>
+</tr>
+<tr>
+<td>10-12 (full operation)</td>
+<td>-$189,000</td>
+<td>$112,500</td>
+<td>-$76,500</td>
+</tr>
+<tr>
+<td>13-14 (steady state)</td>
+<td>-$198,000</td>
+<td>$150,000</td>
+<td>-$48,000 → <strong>Break-even ~Month 14</strong></td>
+</tr>
+<tr>
+<td>15-18</td>
+<td>-$216,000</td>
+<td>$225,000</td>
+<td>+$9,000</td>
+</tr>
+<tr>
+<td>19-24</td>
+<td>-$243,000</td>
+<td>$375,000</td>
+<td>+$132,000</td>
+</tr>
+<tr>
+<td>25-36</td>
+<td>-$297,000</td>
+<td>$600,000</td>
+<td>+$303,000</td>
+</tr>
+<tr>
+<td>37-60</td>
+<td>-$405,000</td>
+<td>$1,125,000</td>
+<td><strong>+$720,000</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Savings sources breakdown:
+- <strong>Recruiter time savings</strong>: $225,000/year (at $50/hr, 10K CVs, 27 min saved/CV)
+- <strong>Avoided cloud AI license</strong>: counted separately in ROI but not in break-even to be conservative
+- <strong>Compliance risk reduction</strong>: counted separately in ROI</p>
+<h3 id="82-break-even-sensitivity">8.2 Break-Even Sensitivity<a class="headerlink" href="#82-break-even-sensitivity" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Monthly Savings</th>
+<th>Break-Even Month</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conservative (5K CVs, $50/hr)</td>
+<td>~$7,300</td>
+<td>Month 18-20</td>
+</tr>
+<tr>
+<td>Mid-range (10K CVs, $50/hr)</td>
+<td>~$18,750</td>
+<td><strong>Month 13-14</strong></td>
+</tr>
+<tr>
+<td>Mid-range (10K CVs, $80/hr)</td>
+<td>~$30,000</td>
+<td>Month 9-10</td>
+</tr>
+<tr>
+<td>High volume (20K CVs, $50/hr)</td>
+<td>~$37,500</td>
+<td>Month 7-8</td>
+</tr>
+<tr>
+<td>High volume (20K CVs, $80/hr)</td>
+<td>~$60,000</td>
+<td>Month 5-6</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-risk-analysis">9. Risk Analysis<a class="headerlink" href="#9-risk-analysis" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Probability</th>
+<th>Impact</th>
+<th>Mitigation Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU hardware failure</td>
+<td>Low</td>
+<td>High — system downtime</td>
+<td>Warranty, rapid replacement agreement (48hr); VICA portable/CPU mode as degraded fallback</td>
+</tr>
+<tr>
+<td>Model quality insufficient for niche roles</td>
+<td>Low-Medium</td>
+<td>Medium — poor matching for some positions</td>
+<td>Upgrade to larger models (70B class); custom fine-tuning; supplement with recruiter review</td>
+</tr>
+<tr>
+<td>Key person dependency (DevOps)</td>
+<td>Medium</td>
+<td>High — maintenance gap</td>
+<td>Detailed runbooks, cross-training, documented procedures; consider managed service partner</td>
+</tr>
+<tr>
+<td>Recruiter adoption resistance</td>
+<td>Medium</td>
+<td>Medium — low utilization, poor ROI</td>
+<td>Phased rollout with champion users; clear ROI dashboards; recruiter feedback integration</td>
+</tr>
+<tr>
+<td>Integration complexity overrun</td>
+<td>Medium</td>
+<td>Medium — timeline slip, budget overrun</td>
+<td>Agile sprints, MVP-first approach, 15% contingency budget, scope management</td>
+</tr>
+<tr>
+<td>Regulatory change beyond current compliance</td>
+<td>Low</td>
+<td>Medium — unexpected requirements</td>
+<td>Open-source architecture enables rapid adaptation; active monitoring of EU AI Act guidance</td>
+</tr>
+<tr>
+<td>Scaling beyond single server capacity</td>
+<td>Low</td>
+<td>Low-Medium — performance degradation</td>
+<td>Multi-GPU upgrade path, horizontal scaling roadmap, queue-based processing</td>
+</tr>
+<tr>
+<td>Security breach of on-premise server</td>
+<td>Low</td>
+<td>High — data exposure, reputation</td>
+<td>Server hardening, network segmentation, access controls, encryption at rest, regular audits</td>
+</tr>
+<tr>
+<td>Open-source model license changes</td>
+<td>Low</td>
+<td>Low — need to switch models</td>
+<td>VICA's model-agnostic architecture (Ollama/vLLM) supports any compatible model</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-implementation-roadmap">10. Implementation Roadmap<a class="headerlink" href="#10-implementation-roadmap" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Weeks</th>
+<th>Key Deliverables</th>
+<th>Team</th>
+<th>Investment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Discovery &amp; Procurement</strong></td>
+<td>1-2</td>
+<td>Requirements doc, hardware ordered, vendor contracts</td>
+<td>PM, HR Lead, IT Lead</td>
+<td>$2,000 - $5,000</td>
+</tr>
+<tr>
+<td><strong>2. Foundation &amp; Deployment</strong></td>
+<td>3-6</td>
+<td>Server live, VICA deployed, GPU validated, security hardened</td>
+<td>DevOps, Backend Dev</td>
+<td>$20,000 - $35,000</td>
+</tr>
+<tr>
+<td><strong>3. Integration</strong></td>
+<td>5-14</td>
+<td>ATS connector, SSO, ERP link, PostgreSQL migration</td>
+<td>Backend Dev, Integration Spec</td>
+<td>$30,000 - $65,000</td>
+</tr>
+<tr>
+<td><strong>4. Customization</strong></td>
+<td>10-16</td>
+<td>Consulting skill taxonomy, RBAC, branded reports</td>
+<td>Domain Expert, Frontend Dev</td>
+<td>$15,000 - $35,000</td>
+</tr>
+<tr>
+<td><strong>5. Validation</strong></td>
+<td>14-20</td>
+<td>Historical validation (F1 &gt; 0.65), load testing passed</td>
+<td>Backend Dev, Senior Recruiters</td>
+<td>$8,000 - $15,000</td>
+</tr>
+<tr>
+<td><strong>6. Pilot</strong></td>
+<td>18-24</td>
+<td>5-10 recruiters live, 2-3 real jobs processed, feedback collected</td>
+<td>Recruiters, PM</td>
+<td>$5,000 - $10,000</td>
+</tr>
+<tr>
+<td><strong>7. Full Rollout</strong></td>
+<td>22-28</td>
+<td>All recruiters trained, monitoring live, KPIs tracking</td>
+<td>All stakeholders</td>
+<td>$10,000 - $15,000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="success-criteria-for-go-live">Success Criteria for Go-Live<a class="headerlink" href="#success-criteria-for-go-live" title="Permanent link">&para;</a></h3>
+<ul>
+<li>System processes 95%+ of uploaded CVs without errors</li>
+<li>F1 score exceeds 0.65 in validation against historical hires</li>
+<li>System handles peak load (50+ concurrent CVs) without degradation</li>
+<li>Recruiter satisfaction survey averages above 4.0/5.0 in pilot</li>
+<li>All critical integrations (ATS, SSO) operational</li>
+<li>Monitoring and alerting in place (GPU utilization, system health, error rates)</li>
+<li>Backup and disaster recovery tested</li>
+<li>Security audit passed with no critical findings</li>
+</ul>
+<hr />
+<p><em>This analysis is prepared for executive review. Cost estimates are based on Western European labor rates (EUR 700-900/day), Q1 2026 hardware pricing, and industry benchmarks for recruitment process efficiency. Actual figures may vary based on organizational specifics, vendor negotiations, and scope changes. A 15% contingency is included in Year 1 estimates.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/your-org/vica" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
