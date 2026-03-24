@@ -89,7 +89,6 @@
   border-radius: 4px;
   height: 28px;
   position: relative;
-  overflow: hidden;
 }
 
 .bar-fill {
@@ -101,6 +100,8 @@
   font-size: 0.8rem;
   font-weight: 600;
   color: white;
+  white-space: nowrap;
+  min-width: fit-content;
   transition: width 0.8s ease;
 }
 
@@ -162,17 +163,33 @@
 .swot-card.threats h4 { color: #c62828; }
 
 [data-md-color-scheme="slate"] .swot-card.strengths {
-  background: rgba(76, 175, 80, 0.1);
+  background: rgba(76, 175, 80, 0.15);
 }
+[data-md-color-scheme="slate"] .swot-card.strengths h4 { color: #66bb6a; }
 [data-md-color-scheme="slate"] .swot-card.weaknesses {
-  background: rgba(255, 152, 0, 0.1);
+  background: rgba(255, 152, 0, 0.15);
 }
+[data-md-color-scheme="slate"] .swot-card.weaknesses h4 { color: #ffa726; }
 [data-md-color-scheme="slate"] .swot-card.opportunities {
-  background: rgba(33, 150, 243, 0.1);
+  background: rgba(33, 150, 243, 0.15);
 }
+[data-md-color-scheme="slate"] .swot-card.opportunities h4 { color: #42a5f5; }
 [data-md-color-scheme="slate"] .swot-card.threats {
-  background: rgba(244, 67, 54, 0.1);
+  background: rgba(244, 67, 54, 0.15);
 }
+[data-md-color-scheme="slate"] .swot-card.threats h4 { color: #ef5350; }
+
+/* Dark mode: KPI card color adjustments */
+[data-md-color-scheme="slate"] .kpi-card.green .kpi-value { color: #66bb6a; }
+[data-md-color-scheme="slate"] .kpi-card.blue .kpi-value { color: #42a5f5; }
+[data-md-color-scheme="slate"] .kpi-card.orange .kpi-value { color: #ffa726; }
+[data-md-color-scheme="slate"] .kpi-card.purple .kpi-value { color: #ce93d8; }
+[data-md-color-scheme="slate"] .kpi-card.red .kpi-value { color: #ef5350; }
+[data-md-color-scheme="slate"] .kpi-card.green { border-left-color: #66bb6a; }
+[data-md-color-scheme="slate"] .kpi-card.blue { border-left-color: #42a5f5; }
+[data-md-color-scheme="slate"] .kpi-card.orange { border-left-color: #ffa726; }
+[data-md-color-scheme="slate"] .kpi-card.purple { border-left-color: #ce93d8; }
+[data-md-color-scheme="slate"] .kpi-card.red { border-left-color: #ef5350; }
 
 /* Timeline / Roadmap */
 .timeline {
@@ -244,6 +261,12 @@
 [data-md-color-scheme="slate"] .badge.blue { background: rgba(21,101,192,0.2); }
 [data-md-color-scheme="slate"] .badge.red { background: rgba(198,40,40,0.2); }
 [data-md-color-scheme="slate"] .badge.purple { background: rgba(123,31,178,0.2); }
+
+/* Dark mode: Mermaid diagram overrides */
+[data-md-color-scheme="slate"] .mermaid {
+  --md-mermaid-node-bg-color: rgba(255, 255, 255, 0.08);
+  --md-mermaid-node-fg-color: #e0e0e0;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

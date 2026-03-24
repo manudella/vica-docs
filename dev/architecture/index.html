@@ -734,10 +734,7 @@
     UI --&gt;|"/api"| API
     SVC --&gt; OLLAMA
     SVC --&gt; VLLM
-
-    style Frontend fill:#e3f2fd,stroke:#1565c0
-    style Backend fill:#f3e5f5,stroke:#7b1fa2
-    style GPU fill:#fff3e0,stroke:#ef6c00</code></pre>
+</code></pre>
 <hr/>
 <h2 id="technology-stack">Technology Stack<a class="headerlink" href="#technology-stack" title="Permanent link">¶</a></h2>
 <table>
@@ -903,15 +900,7 @@
     E --&gt;|"GPU → LLM, decompose + normalize"| F["6. Validate Skills&lt;br/&gt;PUT /jobs/{id}/skills"]
     F --&gt;|"Recruiter reorders, toggles required"| G["7. Run Match&lt;br/&gt;POST /match/run-and-analyze (SSE)"]
     G --&gt;|"SPEA2 ranking + LLM analysis"| H["8. View Report&lt;br/&gt;GET /report/cv/{id}/{job_id}"]
-
-    style A fill:#e8eaf6,stroke:#3f51b5
-    style B fill:#fff3e0,stroke:#ef6c00
-    style C fill:#f3e5f5,stroke:#7b1fa2
-    style D fill:#e8eaf6,stroke:#3f51b5
-    style E fill:#f3e5f5,stroke:#7b1fa2
-    style F fill:#e8f5e9,stroke:#4caf50
-    style G fill:#f3e5f5,stroke:#7b1fa2
-    style H fill:#e8f5e9,stroke:#4caf50</code></pre>
+</code></pre>
 <hr/>
 <h2 id="data-flow-validation-loop">Data Flow: Validation Loop<a class="headerlink" href="#data-flow-validation-loop" title="Permanent link">¶</a></h2>
 <p>Same as regular loop with these additions:</p>
@@ -925,11 +914,7 @@
     F --&gt; G["5. Compute Stats&lt;br/&gt;Precision, Recall, F1, Accuracy@K"]
     G --&gt; H["6. Stats Report&lt;br/&gt;HTML per-run report"]
     H --&gt; I["7. Aggregate Report&lt;br/&gt;HTML across all runs"]
-
-    style A fill:#e8eaf6,stroke:#3f51b5
-    style C fill:#fff9c4,stroke:#f9a825
-    style F fill:#f3e5f5,stroke:#7b1fa2
-    style G fill:#e8f5e9,stroke:#4caf50</code></pre>
+</code></pre>
 <hr/>
 <h2 id="api-layer">API Layer<a class="headerlink" href="#api-layer" title="Permanent link">¶</a></h2>
 <p>Five routers mounted in <code>app/main.py</code>:</p>

@@ -623,11 +623,7 @@
     end
 
     Ingestion --&gt; Extraction --&gt; Ranking --&gt; Analysis
-
-    style Ingestion fill:#e3f2fd,stroke:#1565c0
-    style Extraction fill:#f3e5f5,stroke:#7b1fa2
-    style Ranking fill:#fff3e0,stroke:#ef6c00
-    style Analysis fill:#e8f5e9,stroke:#4caf50</code></pre>
+</code></pre>
 <hr/>
 <h2 id="scoring-flow">Scoring Flow<a class="headerlink" href="#scoring-flow" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>graph LR
@@ -643,9 +639,7 @@
     SEM --&gt; ML["Match Level&lt;br/&gt;strong/partial/&lt;br/&gt;transferable/no_match"]
     SEM --&gt; REC["Recommendation&lt;br/&gt;strong_yes/yes/&lt;br/&gt;maybe/no"]
     SEM --&gt; IQ["Interview Questions&lt;br/&gt;verification + depth"]
-
-    style BIN fill:#fff3e0,stroke:#ef6c00
-    style SPEA2 fill:#fff3e0,stroke:#ef6c00</code></pre>
+</code></pre>
 <div class="admonition info">
 <p class="admonition-title">SPEA2 uses binary skill presence only</p>
 <p>Proficiency, justification, and evidence are <strong>not</strong> used in ranking — they exist for reports and post-match analysis.</p>
