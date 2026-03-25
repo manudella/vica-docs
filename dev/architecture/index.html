@@ -966,23 +966,25 @@
 <h2 id="frontend-structure">Frontend Structure<a class="headerlink" href="#frontend-structure" title="Permanent link">¶</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>frontend/src/
 </span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>├── main.tsx               # React entry point
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>├── App.tsx                # Router: jobs | job-detail | global-candidates | validation
-</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>├── Sidebar.tsx            # Navigation sidebar
-</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>├── JobList.tsx            # List all jobs with counts
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>├── App.tsx                # Router: jobs | job-detail | global-candidates | validation | settings
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>├── Sidebar.tsx            # Navigation sidebar with quick actions, overview stats, settings link
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>├── JobList.tsx            # List all jobs with search bar, filters (status), and sorting
 </span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>├── JobDetail.tsx          # 3-tab view: Candidates, Description &amp; Skills, Match Results
 </span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>│   ├── CandidatePool      # (embedded) Upload, parse, extract, status management
 </span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>│   ├── JobSkillsEditor    # (embedded) Drag-drop skill ordering, required/preferred
 </span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>│   └── MatchRun           # (embedded) Run SPEA2, view results + inline reports
 </span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>├── GlobalCandidates.tsx   # All candidates across all jobs
-</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>├── ValidationRunList.tsx  # List validation runs
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>├── ValidationRunList.tsx  # List validation runs with search bar, filters (type, status), and sorting
 </span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>├── ValidationRunDetail.tsx # Full validation workflow (both historical + supervised)
-</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>└── CVManager.tsx          # Standalone candidate management
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>├── Settings.tsx           # Settings page: GPU management, LLM/OCR config, about
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>└── CVManager.tsx          # Standalone candidate management
 </span></code></pre></div>
 <p><strong>Key patterns</strong>:
 - State management via <code>useState</code> + <code>useCallback</code> (no external state library)
 - SSE streaming for match progress (<code>EventSource</code> API)
 - Drag-and-drop via <code>@dnd-kit</code> (core + sortable)
-- All API calls go through <code>/api</code> proxy (Vite dev or Nginx production)</p>
+- All API calls go through <code>/api</code> proxy (Vite dev or Nginx production)
+- Search/filter/sort on list pages via <code>useMemo</code> for client-side filtering</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
